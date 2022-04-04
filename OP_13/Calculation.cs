@@ -134,13 +134,27 @@ namespace OP_13
         
             textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex+1).ToString();
             textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex+1).ToString()+ "." +(comboBoxStructSubdivision.SelectedIndex+1).ToString();
-        
+            //  textBoxTYPEoPERATION.Text = 
+
+
+            if (textBoxOKDP.Text == "1")
+                textBoxTYPEoPERATION.Text = "304";
+            if (textBoxOKDP.Text == "2")
+                textBoxTYPEoPERATION.Text = "504";
         }
 
          private void numb_org1(object sender, EventArgs e){
             textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex+1).ToString();
             textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex+1).ToString()+ "." +(comboBoxStructSubdivision.SelectedIndex+1).ToString();
-        
+            //  textBoxTYPEoPERATION.Text =
+
+           
+
+                if (textBoxOKDP.Text == "1")
+                    textBoxTYPEoPERATION.Text ="304";
+            if (textBoxOKDP.Text == "2")
+                textBoxTYPEoPERATION.Text = "504";
+
         }
 
 
@@ -241,8 +255,13 @@ namespace OP_13
                 excelsheets.Cells[9, "AQ"] = 1.1;
             if(comboBoxStructSubdivision.Text == "Подразделение 2")
                 excelsheets.Cells[9, "AQ"] = 2.2;
+
+            if (comboBoxStructSubdivision.Text == "Подразделение 1")
+                excelsheets.Cells[10, "AQ"] = 304;
+            if (comboBoxStructSubdivision.Text == "Подразделение 2")
+                excelsheets.Cells[10, "AQ"] = 504;
             // заполняем данные из datagridview
-            for(int i = 0, k = 25; i < dGV_Calculation.Rows.Count; i++, k++)
+            for (int i = 0, k = 25; i < dGV_Calculation.Rows.Count; i++, k++)
             {
                 if (dGV_Calculation.Rows[i].Cells[0].Value != null)
                 {
@@ -311,7 +330,16 @@ namespace OP_13
                 fileInf.Delete();
             }
         }
-       
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 
     

@@ -75,6 +75,8 @@ namespace OP_13
             this.label10 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.linkLabelSignatures = new System.Windows.Forms.LinkLabel();
+            this.textBoxTYPEoPERATION = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).BeginInit();
             this.SuspendLayout();
@@ -82,26 +84,29 @@ namespace OP_13
             // label1_reporting_period
             // 
             this.label1_reporting_period.AutoSize = true;
-            this.label1_reporting_period.Location = new System.Drawing.Point(64, 79);
+            this.label1_reporting_period.Location = new System.Drawing.Point(94, 177);
+            this.label1_reporting_period.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1_reporting_period.Name = "label1_reporting_period";
-            this.label1_reporting_period.Size = new System.Drawing.Size(104, 13);
+            this.label1_reporting_period.Size = new System.Drawing.Size(77, 17);
             this.label1_reporting_period.TabIndex = 2;
-            this.label1_reporting_period.Text = "Отчётный период с";
+            this.label1_reporting_period.Text = "За период";
             // 
             // label2_reporting_period
             // 
             this.label2_reporting_period.AutoSize = true;
-            this.label2_reporting_period.Location = new System.Drawing.Point(321, 79);
+            this.label2_reporting_period.Location = new System.Drawing.Point(414, 177);
+            this.label2_reporting_period.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2_reporting_period.Name = "label2_reporting_period";
-            this.label2_reporting_period.Size = new System.Drawing.Size(19, 13);
+            this.label2_reporting_period.Size = new System.Drawing.Size(17, 17);
             this.label2_reporting_period.TabIndex = 3;
-            this.label2_reporting_period.Text = "по";
+            this.label2_reporting_period.Text = " -";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(668,13);
+            this.dateTimePicker1.Location = new System.Drawing.Point(707, 20);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(141, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // dGV_Calculation
@@ -125,72 +130,81 @@ namespace OP_13
             this.balance_end,
             this.cost});
             this.dGV_Calculation.GridColor = System.Drawing.SystemColors.Control;
-            this.dGV_Calculation.Location = new System.Drawing.Point(16, 154);
+            this.dGV_Calculation.Location = new System.Drawing.Point(21, 302);
+            this.dGV_Calculation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV_Calculation.Name = "dGV_Calculation";
-            this.dGV_Calculation.Size = new System.Drawing.Size(793, 244);
+            this.dGV_Calculation.RowHeadersWidth = 51;
+            this.dGV_Calculation.Size = new System.Drawing.Size(1057, 188);
             this.dGV_Calculation.TabIndex = 7;
-            this.dGV_Calculation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ_izr);
             this.dGV_Calculation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ);
-
             // 
             // Name_
             // 
             this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             this.Name_.Frozen = true;
             this.Name_.HeaderText = "Наименование";
+            this.Name_.MinimumWidth = 6;
             this.Name_.Name = "Name_";
-            this.Name_.Width = 108;
+            this.Name_.Width = 135;
             // 
             // Code
             // 
             this.Code.Frozen = true;
             this.Code.HeaderText = "Код";
+            this.Code.MinimumWidth = 6;
             this.Code.Name = "Code";
             this.Code.Width = 40;
             // 
             // balance_start
             // 
             this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
+            this.balance_start.MinimumWidth = 6;
             this.balance_start.Name = "balance_start";
             this.balance_start.Width = 150;
             // 
             // balance_receipt
             // 
             this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
+            this.balance_receipt.MinimumWidth = 6;
             this.balance_receipt.Name = "balance_receipt";
             this.balance_receipt.Width = 150;
             // 
             // balance_end
             // 
             this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
+            this.balance_end.MinimumWidth = 6;
             this.balance_end.Name = "balance_end";
             this.balance_end.Width = 150;
             // 
             // cost
             // 
             this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
+            this.cost.MinimumWidth = 6;
             this.cost.Name = "cost";
             this.cost.Width = 150;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(174, 76);
+            this.dateTimePicker2.Location = new System.Drawing.Point(215, 177);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(141, 20);
+            this.dateTimePicker2.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker2.TabIndex = 2;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(346, 76);
+            this.dateTimePicker3.Location = new System.Drawing.Point(445, 177);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker3.Size = new System.Drawing.Size(185, 22);
             this.dateTimePicker3.TabIndex = 3;
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(734, 689);
+            this.button_cancel.Location = new System.Drawing.Point(979, 848);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_cancel.Name = "button_cancel";
-            this.button_cancel.Size = new System.Drawing.Size(75, 23);
+            this.button_cancel.Size = new System.Drawing.Size(100, 28);
             this.button_cancel.TabIndex = 15;
             this.button_cancel.Text = "Отмена";
             this.button_cancel.UseVisualStyleBackColor = true;
@@ -198,9 +212,10 @@ namespace OP_13
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(654, 689);
+            this.button_save.Location = new System.Drawing.Point(872, 848);
+            this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(75, 23);
+            this.button_save.Size = new System.Drawing.Size(100, 28);
             this.button_save.TabIndex = 14;
             this.button_save.Text = "Сохранить";
             this.button_save.UseVisualStyleBackColor = true;
@@ -208,9 +223,10 @@ namespace OP_13
             // 
             // calculate
             // 
-            this.calculate.Location = new System.Drawing.Point(654, 662);
+            this.calculate.Location = new System.Drawing.Point(872, 815);
+            this.calculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(156, 21);
+            this.calculate.Size = new System.Drawing.Size(208, 26);
             this.calculate.TabIndex = 12;
             this.calculate.Text = "Рассчитать";
             this.calculate.UseVisualStyleBackColor = true;
@@ -219,58 +235,65 @@ namespace OP_13
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 106);
+            this.label2.Location = new System.Drawing.Point(94, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(95, 17);
             this.label2.TabIndex = 11;
             this.label2.Text = "Организация";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 132);
+            this.label3.Location = new System.Drawing.Point(94, 143);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(151, 13);
+            this.label3.Size = new System.Drawing.Size(113, 17);
             this.label3.TabIndex = 12;
-            this.label3.Text = "Структурное подразделение";
+            this.label3.Text = "Подразделение";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(569, 131);
+            this.label4.Location = new System.Drawing.Point(668, 108);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 13);
+            this.label4.Size = new System.Drawing.Size(119, 17);
             this.label4.TabIndex = 17;
             this.label4.Text = "Форма по ОКПО";
             // 
             // textBoxOKPO
             // 
-            this.textBoxOKPO.Location = new System.Drawing.Point(668, 128);
+            this.textBoxOKPO.Location = new System.Drawing.Point(809, 103);
+            this.textBoxOKPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxOKPO.Name = "textBoxOKPO";
-            this.textBoxOKPO.Size = new System.Drawing.Size(141, 20);
+            this.textBoxOKPO.Size = new System.Drawing.Size(187, 22);
             this.textBoxOKPO.TabIndex = 101;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(510, 106);
+            this.label5.Location = new System.Drawing.Point(668, 177);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(152, 13);
+            this.label5.Size = new System.Drawing.Size(133, 17);
             this.label5.TabIndex = 19;
-            this.label5.Text = "Вид деятельности  по ОКДП";
+            this.label5.Text = "Вид деятельности ";
             // 
             // textBoxOKDP
             // 
-            this.textBoxOKDP.Location = new System.Drawing.Point(668, 103);
+            this.textBoxOKDP.Location = new System.Drawing.Point(809, 174);
+            this.textBoxOKDP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxOKDP.Name = "textBoxOKDP";
-            this.textBoxOKDP.Size = new System.Drawing.Size(141, 20);
+            this.textBoxOKDP.Size = new System.Drawing.Size(187, 22);
             this.textBoxOKDP.TabIndex = 71;
             // 
             // textBoxNumberDoc
             // 
-            this.textBoxNumberDoc.Location = new System.Drawing.Point(392, 14);
+            this.textBoxNumberDoc.Location = new System.Drawing.Point(497, 21);
+            this.textBoxNumberDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNumberDoc.Name = "textBoxNumberDoc";
-            this.textBoxNumberDoc.Size = new System.Drawing.Size(82, 20);
+            this.textBoxNumberDoc.Size = new System.Drawing.Size(108, 22);
             this.textBoxNumberDoc.TabIndex = 1;
             // 
             // comboBoxOrganization
@@ -280,9 +303,10 @@ namespace OP_13
             "Организация 1",
             "Организация 2",
             "Организация 3"});
-            this.comboBoxOrganization.Location = new System.Drawing.Point(174, 102);
+            this.comboBoxOrganization.Location = new System.Drawing.Point(215, 105);
+            this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxOrganization.Name = "comboBoxOrganization";
-            this.comboBoxOrganization.Size = new System.Drawing.Size(312, 21);
+            this.comboBoxOrganization.Size = new System.Drawing.Size(415, 24);
             this.comboBoxOrganization.TabIndex = 1;
             this.comboBoxOrganization.DropDownClosed += new System.EventHandler(this.numb_org);
             // 
@@ -293,9 +317,10 @@ namespace OP_13
             "Подразделение 1",
             "Подразделение 2",
             "Подразделение 3"});
-            this.comboBoxStructSubdivision.Location = new System.Drawing.Point(174, 127);
+            this.comboBoxStructSubdivision.Location = new System.Drawing.Point(215, 140);
+            this.comboBoxStructSubdivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxStructSubdivision.Name = "comboBoxStructSubdivision";
-            this.comboBoxStructSubdivision.Size = new System.Drawing.Size(312, 21);
+            this.comboBoxStructSubdivision.Size = new System.Drawing.Size(415, 24);
             this.comboBoxStructSubdivision.TabIndex = 6;
             this.comboBoxStructSubdivision.DropDownClosed += new System.EventHandler(this.numb_org1);
             // 
@@ -316,9 +341,11 @@ namespace OP_13
             this.Column1,
             this.NumberDishes,
             this.Summa});
-            this.dGV_Spravka.Location = new System.Drawing.Point(16, 506);
+            this.dGV_Spravka.Location = new System.Drawing.Point(21, 623);
+            this.dGV_Spravka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV_Spravka.Name = "dGV_Spravka";
-            this.dGV_Spravka.Size = new System.Drawing.Size(793, 150);
+            this.dGV_Spravka.RowHeadersWidth = 51;
+            this.dGV_Spravka.Size = new System.Drawing.Size(1057, 185);
             this.dGV_Spravka.TabIndex = 12;
             this.dGV_Spravka.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ_spravka);
             // 
@@ -326,20 +353,23 @@ namespace OP_13
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.Column1.HeaderText = "";
+            this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            this.Column1.Width = 19;
+            this.Column1.Width = 23;
             // 
             // NumberDishes
             // 
             this.NumberDishes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NumberDishes.HeaderText = "Количество блюд";
+            this.NumberDishes.MinimumWidth = 6;
             this.NumberDishes.Name = "NumberDishes";
             // 
             // Summa
             // 
             this.Summa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Summa.HeaderText = "Сумма (руб.коп.)";
+            this.Summa.MinimumWidth = 6;
             this.Summa.Name = "Summa";
             this.Summa.ReadOnly = true;
             // 
@@ -347,96 +377,106 @@ namespace OP_13
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(120, 411);
+            this.label11.Location = new System.Drawing.Point(160, 506);
+            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(568, 18);
+            this.label11.Size = new System.Drawing.Size(706, 24);
             this.label11.TabIndex = 36;
             this.label11.Text = "Справка о стоимости специй и соли, включенной в калькуляцию блюд";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(17, 442);
+            this.label1.Location = new System.Drawing.Point(23, 544);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(151, 13);
+            this.label1.Size = new System.Drawing.Size(195, 17);
             this.label1.TabIndex = 37;
             this.label1.Text = "Стоимость специй на блюдо";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(262, 442);
+            this.label6.Location = new System.Drawing.Point(349, 544);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.Size = new System.Drawing.Size(35, 17);
             this.label6.TabIndex = 38;
             this.label6.Text = "руб.";
             // 
             // textBoxRubl1
             // 
-            this.textBoxRubl1.Location = new System.Drawing.Point(174, 439);
+            this.textBoxRubl1.Location = new System.Drawing.Point(232, 540);
+            this.textBoxRubl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRubl1.Name = "textBoxRubl1";
-            this.textBoxRubl1.Size = new System.Drawing.Size(82, 20);
+            this.textBoxRubl1.Size = new System.Drawing.Size(108, 22);
             this.textBoxRubl1.TabIndex = 8;
             this.textBoxRubl1.Text = "0";
-            
             // 
             // textBoxCopeica1
             // 
-            this.textBoxCopeica1.Location = new System.Drawing.Point(295, 439);
+            this.textBoxCopeica1.Location = new System.Drawing.Point(393, 540);
+            this.textBoxCopeica1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCopeica1.Name = "textBoxCopeica1";
-            this.textBoxCopeica1.Size = new System.Drawing.Size(82, 20);
+            this.textBoxCopeica1.Size = new System.Drawing.Size(108, 22);
             this.textBoxCopeica1.TabIndex = 9;
             this.textBoxCopeica1.Text = "00";
             // 
             // textBoxCopeica2
             // 
-            this.textBoxCopeica2.Location = new System.Drawing.Point(295, 471);
+            this.textBoxCopeica2.Location = new System.Drawing.Point(393, 580);
+            this.textBoxCopeica2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCopeica2.Name = "textBoxCopeica2";
-            this.textBoxCopeica2.Size = new System.Drawing.Size(82, 20);
+            this.textBoxCopeica2.Size = new System.Drawing.Size(108, 22);
             this.textBoxCopeica2.TabIndex = 11;
             this.textBoxCopeica2.Text = "00";
             // 
             // textBoxRubl2
             // 
-            this.textBoxRubl2.Location = new System.Drawing.Point(174, 471);
+            this.textBoxRubl2.Location = new System.Drawing.Point(232, 580);
+            this.textBoxRubl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRubl2.Name = "textBoxRubl2";
-            this.textBoxRubl2.Size = new System.Drawing.Size(82, 20);
+            this.textBoxRubl2.Size = new System.Drawing.Size(108, 22);
             this.textBoxRubl2.TabIndex = 10;
             this.textBoxRubl2.Text = "0";
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(383, 474);
+            this.label12.Location = new System.Drawing.Point(511, 583);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(28, 13);
+            this.label12.Size = new System.Drawing.Size(35, 17);
             this.label12.TabIndex = 44;
             this.label12.Text = "коп.";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(262, 474);
+            this.label13.Location = new System.Drawing.Point(349, 583);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(27, 13);
+            this.label13.Size = new System.Drawing.Size(35, 17);
             this.label13.TabIndex = 43;
             this.label13.Text = "руб.";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 474);
+            this.label14.Location = new System.Drawing.Point(23, 583);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(139, 13);
+            this.label14.Size = new System.Drawing.Size(179, 17);
             this.label14.TabIndex = 42;
             this.label14.Text = "Стоимость соли на блюдо";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(627, 17);
+            this.label8.Location = new System.Drawing.Point(657, 24);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 13);
+            this.label8.Size = new System.Drawing.Size(42, 17);
             this.label8.TabIndex = 46;
             this.label8.Text = "Дата";
             // 
@@ -444,9 +484,10 @@ namespace OP_13
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(178, 14);
+            this.label9.Location = new System.Drawing.Point(237, 17);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(208, 20);
+            this.label9.Size = new System.Drawing.Size(252, 25);
             this.label9.TabIndex = 47;
             this.label9.Text = "Контрольный расчет №";
             // 
@@ -454,37 +495,62 @@ namespace OP_13
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(208, 45);
+            this.label10.Location = new System.Drawing.Point(237, 51);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(202, 20);
+            this.label10.Size = new System.Drawing.Size(243, 25);
             this.label10.TabIndex = 48;
             this.label10.Text = "расхода специй и соли";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(383, 442);
+            this.label7.Location = new System.Drawing.Point(511, 544);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(28, 13);
+            this.label7.Size = new System.Drawing.Size(35, 17);
             this.label7.TabIndex = 49;
             this.label7.Text = "коп.";
             // 
             // linkLabelSignatures
             // 
             this.linkLabelSignatures.AutoSize = true;
-            this.linkLabelSignatures.Location = new System.Drawing.Point(17, 666);
+            this.linkLabelSignatures.Location = new System.Drawing.Point(23, 820);
+            this.linkLabelSignatures.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelSignatures.Name = "linkLabelSignatures";
-            this.linkLabelSignatures.Size = new System.Drawing.Size(123, 13);
+            this.linkLabelSignatures.Size = new System.Drawing.Size(160, 17);
             this.linkLabelSignatures.TabIndex = 13;
             this.linkLabelSignatures.TabStop = true;
             this.linkLabelSignatures.Text = "Расшифрока подписей";
             this.linkLabelSignatures.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelSignatures_LinkClicked);
             // 
+            // textBoxTYPEoPERATION
+            // 
+            this.textBoxTYPEoPERATION.Location = new System.Drawing.Point(809, 140);
+            this.textBoxTYPEoPERATION.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxTYPEoPERATION.Name = "textBoxTYPEoPERATION";
+            this.textBoxTYPEoPERATION.Size = new System.Drawing.Size(187, 22);
+            this.textBoxTYPEoPERATION.TabIndex = 103;
+            this.textBoxTYPEoPERATION.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(668, 143);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 17);
+            this.label15.TabIndex = 102;
+            this.label15.Text = "Вид операции";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
             // Calculation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(822, 720);
+            this.ClientSize = new System.Drawing.Size(1096, 989);
+            this.Controls.Add(this.textBoxTYPEoPERATION);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.linkLabelSignatures);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label10);
@@ -520,13 +586,14 @@ namespace OP_13
             this.Controls.Add(this.label2_reporting_period);
             this.Controls.Add(this.label1_reporting_period);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Calculation";
-            this.Text = "ФОРМА ОП-13";
+            this.Text = "За период";
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-    
+
         }
 
         
@@ -574,6 +641,8 @@ namespace OP_13
         private Label label10;
         private Label label7;
         private LinkLabel linkLabelSignatures;
+        private TextBox textBoxTYPEoPERATION;
+        private Label label15;
     }
 }
 
