@@ -19,17 +19,23 @@ namespace OP_13
         public Calculation()
         {
             InitializeComponent();
-
+            result.Rows.Add();//////////////////////
             // Добавление строк в таблицу
             for (int i = 0; i < 8; ++i)
             {
-                dGV_Calculation.Rows.Add();
+                dGV_Calculation.Rows.Add();////////////////////////
+              /*  DataGridViewComboBoxCell dcombo = new DataGridViewComboBoxCell();
+                dcombo.Items.Add("A");
+                dcombo.Items.Add("B");
+                dcombo.Items.Add("C");
+                dcombo.AutoCompleteMode = 
+                dGV_Calculation.Rows[i].Cells[0] = dcombo;*/
             }
             /*  dGV_Calculation.Rows[0].Cells[0].Value = "Соль";
               dGV_Calculation.Rows[1].Cells[0].Value = "Перец";
               dGV_Calculation.Rows[2].Cells[0].Value = "Горчица";*/
-            dGV_Calculation.Rows[7].Cells[1].Value = "Итого";
-
+            dGV_Calculation.Rows[7].Cells[1].Value = "Итого";//////////////////////////////
+            result.Rows[0].Cells[0].Value = "Итого";///////////////////////////
             // Нумерация строк в таблице
             for (int i = 0; i < dGV_Calculation.RowCount; i++)
             {
@@ -37,30 +43,31 @@ namespace OP_13
             }
 
             // Добавление строк в таблицу
-            for (int i = 0; i < 5; ++i)
+            for (int i = 0; i < 6; ++i)
             {
                 dGV_Spravka.Rows.Add();
             }
             // Запрещаем изменять определенные ячейки в основной форме
             dGV_Calculation.Rows[7].ReadOnly = true;
-
+            result.Rows[0].ReadOnly = true;
 
             // Запрещаем изменять определенные ячейки в справке
-            for (int i = 2; i < dGV_Spravka.RowCount; i++)
+            /*for (int i = 2; i < dGV_Spravka.RowCount; i++)
             {
-                dGV_Spravka.Rows[i].Cells[1].ReadOnly = true;
-            }
+                dGV_Spravka.Rows[i].Cells[2].ReadOnly = true;
+            }*/
             //Меняем цвет ячейки
-            dGV_Spravka.Rows[2].Cells[0].Style.BackColor = Color.LightGray;
-            dGV_Spravka.Rows[3].Cells[0].Style.BackColor = Color.LightGray;
-            dGV_Spravka.Rows[4].Cells[0].Style.BackColor = Color.LightGray;
+            dGV_Spravka.Rows[3].Cells[2].Style.BackColor = Color.LightGray;
+            dGV_Spravka.Rows[4].Cells[2].Style.BackColor = Color.LightGray;
+            dGV_Spravka.Rows[5].Cells[2].Style.BackColor = Color.LightGray;
 
             // Заполнение полей таблицы "Справка"
-            dGV_Spravka.Rows[0].Cells[0].Value = "Продано блюд, в которые включена стоимость специй на блюдо";
-            dGV_Spravka.Rows[1].Cells[0].Value = "Продано блюд, в которые включена стоимость соли на блюдо";
-            dGV_Spravka.Rows[2].Cells[0].Value = "Итого";
-            dGV_Spravka.Rows[3].Cells[0].Value = "Израсходовано согласно контрольному расчету";
-            dGV_Spravka.Rows[4].Cells[0].Value = "Сумма недорасхода";
+            dGV_Spravka.Rows[0].Cells[0].Value = "Соль";
+            dGV_Spravka.Rows[1].Cells[0].Value = "Специи";
+            dGV_Spravka.Rows[2].Cells[0].Value = "Горчица";
+            dGV_Spravka.Rows[3].Cells[2].Value = "Итого";
+            dGV_Spravka.Rows[4].Cells[2].Value = "Израсходовано согласно контрольному расчету";
+            dGV_Spravka.Rows[5].Cells[2].Value = "Сумма недорасхода";
             // summ();   
         }
 
@@ -109,22 +116,24 @@ namespace OP_13
             // Заполняем справку
 
             // Израсходовано согласно контр. расчёта берем из первой таблицы
-            dGV_Spravka.Rows[3].Cells[2].Value = dGV_Calculation.Rows[7].Cells[5].Value;
+            dGV_Spravka.Rows[4].Cells[3].Value = dGV_Calculation.Rows[7].Cells[5].Value;////////6/6/6/6/6
+
             // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) *
-                (Convert.ToSingle(textBoxRubl1.Text) + Convert.ToSingle(textBoxCopeica1.Text) * 0.01);
-            dGV_Spravka.Rows[1].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value) *
-                (Convert.ToSingle(textBoxRubl2.Text) + Convert.ToSingle(textBoxCopeica2.Text) * 0.01);
+            dGV_Spravka.Rows[0].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value);
+            dGV_Spravka.Rows[1].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
+            dGV_Spravka.Rows[2].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[2].Cells[1].Value);
             // Итого
-            dGV_Spravka.Rows[2].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value);
+            dGV_Spravka.Rows[3].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[3].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[3].Value);
             // сумма недорасхода
-            dGV_Spravka.Rows[4].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) -
-              Convert.ToSingle(dGV_Spravka.Rows[3].Cells[2].Value);
+            dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -
+              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
 
             //Кол-во блюд
-            dGV_Spravka.Rows[2].Cells[1].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
+            dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value);
 
         }
 
@@ -161,21 +170,24 @@ namespace OP_13
 
         private void summ_spravka(object sender, DataGridViewCellEventArgs e)
         {
-            dGV_Spravka.Rows[3].Cells[2].Value = dGV_Calculation.Rows[7].Cells[5].Value;
+            dGV_Spravka.Rows[4].Cells[3].Value = dGV_Calculation.Rows[7].Cells[5].Value;/////////////////////4/4/4/4
             // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) *
-                (Convert.ToSingle(textBoxRubl1.Text) + Convert.ToSingle(textBoxCopeica1.Text) * 0.01);
-            dGV_Spravka.Rows[1].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value) *
-                (Convert.ToSingle(textBoxRubl2.Text) + Convert.ToSingle(textBoxCopeica2.Text) * 0.01);
+            dGV_Spravka.Rows[0].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value);
+            dGV_Spravka.Rows[01].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
+            dGV_Spravka.Rows[2].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) *     Convert.ToSingle(dGV_Spravka.Rows[2].Cells[1].Value);
+
+          
             // Итого
-            dGV_Spravka.Rows[2].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value);
+            dGV_Spravka.Rows[3].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[3].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[3].Value);
             // сумма недорасхода
-            dGV_Spravka.Rows[4].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) -
-              Convert.ToSingle(dGV_Spravka.Rows[3].Cells[2].Value);
+            dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -
+              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
             //Кол-во блюд
-            dGV_Spravka.Rows[2].Cells[1].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
+            dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) +
+               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value);
             //
         }
 
@@ -281,22 +293,33 @@ namespace OP_13
             excelsheets.Cells[32, "AS"] = dGV_Calculation.Rows[7].Cells[5].Value;
 
             // заполняем справку из datagridview и textBox
-            excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
-            excelsheets.Cells[40, "T"] = textBoxCopeica1.Text;
-            excelsheets.Cells[43, "C"] = textBoxRubl2.Text;
-            excelsheets.Cells[43, "T"] = textBoxCopeica2.Text;
-            excelsheets.Cells[39, "AE"] = dGV_Spravka.Rows[0].Cells[1].Value;
-            excelsheets.Cells[39, "AL"] = dGV_Spravka.Rows[0].Cells[2].Value;
-            excelsheets.Cells[42, "AE"] = dGV_Spravka.Rows[1].Cells[1].Value;
-            excelsheets.Cells[42, "AL"] = dGV_Spravka.Rows[1].Cells[2].Value;
-            excelsheets.Cells[45, "AE"] = dGV_Spravka.Rows[2].Cells[1].Value;
-            excelsheets.Cells[45, "AL"] = dGV_Spravka.Rows[2].Cells[2].Value;
-            excelsheets.Cells[46, "AE"] = dGV_Spravka.Rows[3].Cells[1].Value;
-            excelsheets.Cells[46, "AL"] = dGV_Spravka.Rows[3].Cells[2].Value;
-            excelsheets.Cells[47, "AE"] = dGV_Spravka.Rows[4].Cells[1].Value;
-            excelsheets.Cells[47, "AL"] = dGV_Spravka.Rows[4].Cells[2].Value;
+          //  excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
+           // excelsheets.Cells[40, "T"] = textBoxCopeica1.Text;
+            excelsheets.Cells[40, "C"] = dGV_Spravka.Rows[0].Cells[1].Value;
+            excelsheets.Cells[40, "T"] = dGV_Spravka.Rows[0].Cells[1].Value;
+
+            excelsheets.Cells[43, "C"] = dGV_Spravka.Rows[1].Cells[1].Value;
+            excelsheets.Cells[43, "T"] = dGV_Spravka.Rows[1].Cells[1].Value;
+
+            excelsheets.Cells[46, "C"] = dGV_Spravka.Rows[2].Cells[1].Value;
+            excelsheets.Cells[46, "T"] = dGV_Spravka.Rows[2].Cells[1].Value;
 
 
+            excelsheets.Cells[39, "AE"] = dGV_Spravka.Rows[0].Cells[2].Value;
+              excelsheets.Cells[39, "AL"] = dGV_Spravka.Rows[0].Cells[3].Value;
+              excelsheets.Cells[42, "AE"] = dGV_Spravka.Rows[1].Cells[2].Value;
+              excelsheets.Cells[42, "AL"] = dGV_Spravka.Rows[1].Cells[3].Value;
+            excelsheets.Cells[45, "AE"] = dGV_Spravka.Rows[2].Cells[2].Value;
+            excelsheets.Cells[45, "AL"] = dGV_Spravka.Rows[2].Cells[3].Value;
+
+            excelsheets.Cells[48, "AE"] = dGV_Spravka.Rows[3].Cells[2].Value;
+              excelsheets.Cells[48, "AL"] = dGV_Spravka.Rows[3].Cells[3].Value;
+              excelsheets.Cells[49, "AE"] = dGV_Spravka.Rows[4].Cells[2].Value;
+              excelsheets.Cells[49, "AL"] = dGV_Spravka.Rows[4].Cells[3].Value;
+              excelsheets.Cells[50, "AE"] = dGV_Spravka.Rows[5].Cells[2].Value;
+              excelsheets.Cells[50, "AL"] = dGV_Spravka.Rows[5].Cells[3].Value;
+
+             
             string fileName_new = String.Empty;
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
             saveFileDialog1.Filter = "xls files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
@@ -352,6 +375,13 @@ namespace OP_13
         {
             if (e.Control is ComboBox)
             {
+                
+               
+                  //  (e.Control as ComboBox).DropDownStyle = ComboBoxStyle.DropDown;
+                 //   (e.Control as ComboBox).AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                
+            
+
                 (e.Control as ComboBox).SelectedIndexChanged -= new EventHandler(cmb_SelectedIndexChanged);
                 (e.Control as ComboBox).SelectedIndexChanged += new EventHandler(cmb_SelectedIndexChanged);
             }

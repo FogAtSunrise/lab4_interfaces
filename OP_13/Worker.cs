@@ -41,11 +41,11 @@ namespace OP_13
             Excel.Worksheet excelsheets = (Excel.Worksheet)excelappworkbooks.Sheets[1];
 
             //заполняем строку
-            excelsheets.Cells[49, "P"] = comboBoxMade.Text;
-            excelsheets.Cells[49, "AH"] = textBoxMade.Text;
+            excelsheets.Cells[52, "P"] = comboBoxMade.Text;
+            excelsheets.Cells[52, "AH"] = textBoxMade.Text;
             excelsheets.Cells[13, "AR"] = comboBoxApproved.Text;
             excelsheets.Cells[15, "AS"] = textBoxApproved.Text;
-            excelsheets.Cells[51, "P"] = textBoxAccountant.Text;
+            excelsheets.Cells[54, "P"] = textBoxAccountant.Text;
 
             //Save to file
             excelsheets.SaveAs(fileName_new);
