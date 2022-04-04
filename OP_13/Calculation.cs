@@ -14,26 +14,26 @@ namespace OP_13
 {
     public partial class Calculation : Form
     {
-        
+
         Worker worker = new Worker();
         public Calculation()
         {
             InitializeComponent();
 
             // Добавление строк в таблицу
-            for(int i = 0; i < 8; ++i)
+            for (int i = 0; i < 8; ++i)
             {
                 dGV_Calculation.Rows.Add();
             }
-            dGV_Calculation.Rows[0].Cells[0].Value = "Соль";
-            dGV_Calculation.Rows[1].Cells[0].Value = "Перец";
-            dGV_Calculation.Rows[2].Cells[0].Value = "Горчица";
+            /*  dGV_Calculation.Rows[0].Cells[0].Value = "Соль";
+              dGV_Calculation.Rows[1].Cells[0].Value = "Перец";
+              dGV_Calculation.Rows[2].Cells[0].Value = "Горчица";*/
             dGV_Calculation.Rows[7].Cells[1].Value = "Итого";
-            
+
             // Нумерация строк в таблице
             for (int i = 0; i < dGV_Calculation.RowCount; i++)
             {
-                dGV_Calculation.Rows[i].HeaderCell.Value = (i + 1).ToString(); 
+                dGV_Calculation.Rows[i].HeaderCell.Value = (i + 1).ToString();
             }
 
             // Добавление строк в таблицу
@@ -43,10 +43,8 @@ namespace OP_13
             }
             // Запрещаем изменять определенные ячейки в основной форме
             dGV_Calculation.Rows[7].ReadOnly = true;
-            for (int i = 0; i < 3; i++)
-            {
-                dGV_Calculation.Rows[i].Cells[0].ReadOnly = true;
-            }
+
+
             // Запрещаем изменять определенные ячейки в справке
             for (int i = 2; i < dGV_Spravka.RowCount; i++)
             {
@@ -63,7 +61,7 @@ namespace OP_13
             dGV_Spravka.Rows[2].Cells[0].Value = "Итого";
             dGV_Spravka.Rows[3].Cells[0].Value = "Израсходовано согласно контрольному расчету";
             dGV_Spravka.Rows[4].Cells[0].Value = "Сумма недорасхода";
-           // summ();   
+            // summ();   
         }
 
         private void button_cancel_Click(object sender, EventArgs e)
@@ -103,17 +101,17 @@ namespace OP_13
                         }
 
                 }
-            }                
+            }
 
-           // summ();
-          
+            // summ();
+
 
             // Заполняем справку
-            
+
             // Израсходовано согласно контр. расчёта берем из первой таблицы
             dGV_Spravka.Rows[3].Cells[2].Value = dGV_Calculation.Rows[7].Cells[5].Value;
             // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) * 
+            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) *
                 (Convert.ToSingle(textBoxRubl1.Text) + Convert.ToSingle(textBoxCopeica1.Text) * 0.01);
             dGV_Spravka.Rows[1].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value) *
                 (Convert.ToSingle(textBoxRubl2.Text) + Convert.ToSingle(textBoxCopeica2.Text) * 0.01);
@@ -127,13 +125,14 @@ namespace OP_13
             //Кол-во блюд
             dGV_Spravka.Rows[2].Cells[1].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) +
                Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
-    
+
         }
 
-        private void numb_org(object sender, EventArgs e){
-        
-            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex+1).ToString();
-            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex+1).ToString()+ "." +(comboBoxStructSubdivision.SelectedIndex+1).ToString();
+        private void numb_org(object sender, EventArgs e)
+        {
+
+            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex + 1).ToString();
+            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex + 1).ToString() + "." + (comboBoxStructSubdivision.SelectedIndex + 1).ToString();
             //  textBoxTYPEoPERATION.Text = 
 
 
@@ -143,15 +142,16 @@ namespace OP_13
                 textBoxTYPEoPERATION.Text = "504";
         }
 
-         private void numb_org1(object sender, EventArgs e){
-            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex+1).ToString();
-            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex+1).ToString()+ "." +(comboBoxStructSubdivision.SelectedIndex+1).ToString();
+        private void numb_org1(object sender, EventArgs e)
+        {
+            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex + 1).ToString();
+            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex + 1).ToString() + "." + (comboBoxStructSubdivision.SelectedIndex + 1).ToString();
             //  textBoxTYPEoPERATION.Text =
 
-           
 
-                if (textBoxOKDP.Text == "1")
-                    textBoxTYPEoPERATION.Text ="304";
+
+            if (textBoxOKDP.Text == "1")
+                textBoxTYPEoPERATION.Text = "304";
             if (textBoxOKDP.Text == "2")
                 textBoxTYPEoPERATION.Text = "504";
 
@@ -159,10 +159,11 @@ namespace OP_13
 
 
 
-        private void summ_spravka(object sender, DataGridViewCellEventArgs e){
-               dGV_Spravka.Rows[3].Cells[2].Value = dGV_Calculation.Rows[7].Cells[5].Value;
+        private void summ_spravka(object sender, DataGridViewCellEventArgs e)
+        {
+            dGV_Spravka.Rows[3].Cells[2].Value = dGV_Calculation.Rows[7].Cells[5].Value;
             // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) * 
+            dGV_Spravka.Rows[0].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) *
                 (Convert.ToSingle(textBoxRubl1.Text) + Convert.ToSingle(textBoxCopeica1.Text) * 0.01);
             dGV_Spravka.Rows[1].Cells[2].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value) *
                 (Convert.ToSingle(textBoxRubl2.Text) + Convert.ToSingle(textBoxCopeica2.Text) * 0.01);
@@ -175,20 +176,21 @@ namespace OP_13
             //Кол-во блюд
             dGV_Spravka.Rows[2].Cells[1].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value) +
                Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
-        //
+            //
         }
 
-        private void summ_izr(object sender, DataGridViewCellEventArgs e){
+        private void summ_izr(object sender, DataGridViewCellEventArgs e)
+        {
             //Считаем сколько израсходовано
             int i;
-            
-            for (int j = 0; j < dGV_Calculation.Rows.Count-5; j++)
+
+            for (int j = 0; j < dGV_Calculation.Rows.Count - 5; j++)
             {
                 float summa = 0;
-                
-                for (i = 2; i < dGV_Calculation.ColumnCount-1; i++)
+
+                for (i = 2; i < dGV_Calculation.ColumnCount - 1; i++)
                     if (dGV_Calculation.Rows[j].Cells[i].Value != null)
-                    {   
+                    {
                         float value = Convert.ToSingle(dGV_Calculation.Rows[j].Cells[i].Value);
                         summa += value;
                     }
@@ -198,16 +200,17 @@ namespace OP_13
 
         }
 
-        private void summ(object sender, DataGridViewCellEventArgs e){
-              // Считаем ИТОГО 
+        private void summ(object sender, DataGridViewCellEventArgs e)
+        {
+            // Считаем ИТОГО 
             int i;
             for (int j = 2; j < dGV_Calculation.ColumnCount; j++)
             {
                 float summa = 0;
-                
-                for (i = 0; i < dGV_Calculation.Rows.Count-1; i++)
+
+                for (i = 0; i < dGV_Calculation.Rows.Count - 1; i++)
                     if (dGV_Calculation.Rows[i].Cells[j].Value != null)
-                    {   
+                    {
                         float value = Convert.ToSingle(dGV_Calculation.Rows[i].Cells[j].Value);
                         summa += value;
                     }
@@ -225,8 +228,8 @@ namespace OP_13
             if (!fileInf.Exists)
             {
                 fileName = Application.StartupPath + "\\" + "op13" + ".xlsx";
-            }            
-            
+            }
+
             //Получаем набор ссылок на объекты Workbook
             Excel.Workbook excelappworkbooks = exApp.Workbooks.Open(fileName,
               Type.Missing, Type.Missing, Type.Missing, Type.Missing,
@@ -236,7 +239,7 @@ namespace OP_13
 
             // Получить первый рабочий лист.
             Excel.Worksheet excelsheets = (Excel.Worksheet)excelappworkbooks.Sheets[1];
-            
+
             //заполняем шапку
             excelsheets.Cells[16, "Q"] = textBoxNumberDoc.Text;
             excelsheets.Cells[16, "AC"] = dateTimePicker2.Text;
@@ -244,7 +247,7 @@ namespace OP_13
             excelsheets.Cells[16, "W"] = dateTimePicker1.Text;
             excelsheets.Cells[6, "A"] = comboBoxOrganization.Text;
             excelsheets.Cells[8, "A"] = comboBoxStructSubdivision.Text;
-            
+
             if (comboBoxOrganization.Text == "Организация 1")
                 excelsheets.Cells[6, "AQ"] = 1;
             if (comboBoxOrganization.Text == "Организация 2")
@@ -253,13 +256,12 @@ namespace OP_13
                 excelsheets.Cells[6, "AQ"] = 3;
             if (comboBoxStructSubdivision.Text == "Подразделение 1")
                 excelsheets.Cells[9, "AQ"] = 1.1;
-            if(comboBoxStructSubdivision.Text == "Подразделение 2")
+            if (comboBoxStructSubdivision.Text == "Подразделение 2")
                 excelsheets.Cells[9, "AQ"] = 2.2;
 
-            if (comboBoxStructSubdivision.Text == "Подразделение 1")
-                excelsheets.Cells[10, "AQ"] = 304;
-            if (comboBoxStructSubdivision.Text == "Подразделение 2")
-                excelsheets.Cells[10, "AQ"] = 504;
+           
+                excelsheets.Cells[10, "AQ"] = textBoxTYPEoPERATION.Text;
+            
             // заполняем данные из datagridview
             for (int i = 0, k = 25; i < dGV_Calculation.Rows.Count; i++, k++)
             {
@@ -340,7 +342,35 @@ namespace OP_13
         {
 
         }
-    }
 
-    
+        private void dGV_Calculation_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dGV_Calculation_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (e.Control is ComboBox)
+            {
+                (e.Control as ComboBox).SelectedIndexChanged -= new EventHandler(cmb_SelectedIndexChanged);
+                (e.Control as ComboBox).SelectedIndexChanged += new EventHandler(cmb_SelectedIndexChanged);
+            }
+        }
+
+        private void cmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int value = 0;
+
+            if ((sender as ComboBox).SelectedItem.ToString() == "Соль")
+                value = 1;
+            else
+            if ((sender as ComboBox).SelectedItem.ToString() == "Специи")
+                value = 3;
+            else
+            if ((sender as ComboBox).SelectedItem.ToString() == "Горчица")
+                value = 4;
+            dGV_Calculation[1, dGV_Calculation.CurrentCellAddress.Y].Value = value;
+      
+        }
+    }
 }

@@ -30,18 +30,13 @@ namespace OP_13
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1_reporting_period = new System.Windows.Forms.Label();
             this.label2_reporting_period = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dGV_Calculation = new System.Windows.Forms.DataGridView();
-            this.Name_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_receipt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.button_cancel = new System.Windows.Forms.Button();
@@ -77,14 +72,26 @@ namespace OP_13
             this.linkLabelSignatures = new System.Windows.Forms.LinkLabel();
             this.textBoxTYPEoPERATION = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tab2 = new System.Windows.Forms.TabPage();
+            this.tab1 = new System.Windows.Forms.TabPage();
+            this.Name_ = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_receipt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).BeginInit();
+            this.tabControl1.SuspendLayout();
+            this.tab2.SuspendLayout();
+            this.tab1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1_reporting_period
             // 
             this.label1_reporting_period.AutoSize = true;
-            this.label1_reporting_period.Location = new System.Drawing.Point(94, 177);
+            this.label1_reporting_period.Location = new System.Drawing.Point(41, 178);
             this.label1_reporting_period.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1_reporting_period.Name = "label1_reporting_period";
             this.label1_reporting_period.Size = new System.Drawing.Size(77, 17);
@@ -94,7 +101,7 @@ namespace OP_13
             // label2_reporting_period
             // 
             this.label2_reporting_period.AutoSize = true;
-            this.label2_reporting_period.Location = new System.Drawing.Point(414, 177);
+            this.label2_reporting_period.Location = new System.Drawing.Point(361, 178);
             this.label2_reporting_period.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2_reporting_period.Name = "label2_reporting_period";
             this.label2_reporting_period.Size = new System.Drawing.Size(17, 17);
@@ -112,15 +119,16 @@ namespace OP_13
             // dGV_Calculation
             // 
             this.dGV_Calculation.AllowUserToAddRows = false;
+            this.dGV_Calculation.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dGV_Calculation.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Calculation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Calculation.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dGV_Calculation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Calculation.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Name_,
@@ -130,78 +138,35 @@ namespace OP_13
             this.balance_end,
             this.cost});
             this.dGV_Calculation.GridColor = System.Drawing.SystemColors.Control;
-            this.dGV_Calculation.Location = new System.Drawing.Point(21, 302);
+            this.dGV_Calculation.Location = new System.Drawing.Point(-4, 0);
             this.dGV_Calculation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV_Calculation.Name = "dGV_Calculation";
             this.dGV_Calculation.RowHeadersWidth = 51;
-            this.dGV_Calculation.Size = new System.Drawing.Size(1057, 188);
+            this.dGV_Calculation.Size = new System.Drawing.Size(1007, 341);
             this.dGV_Calculation.TabIndex = 7;
+            this.dGV_Calculation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Calculation_CellContentClick);
             this.dGV_Calculation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ);
-            // 
-            // Name_
-            // 
-            this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Name_.Frozen = true;
-            this.Name_.HeaderText = "Наименование";
-            this.Name_.MinimumWidth = 6;
-            this.Name_.Name = "Name_";
-            this.Name_.Width = 135;
-            // 
-            // Code
-            // 
-            this.Code.Frozen = true;
-            this.Code.HeaderText = "Код";
-            this.Code.MinimumWidth = 6;
-            this.Code.Name = "Code";
-            this.Code.Width = 40;
-            // 
-            // balance_start
-            // 
-            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
-            this.balance_start.MinimumWidth = 6;
-            this.balance_start.Name = "balance_start";
-            this.balance_start.Width = 150;
-            // 
-            // balance_receipt
-            // 
-            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
-            this.balance_receipt.MinimumWidth = 6;
-            this.balance_receipt.Name = "balance_receipt";
-            this.balance_receipt.Width = 150;
-            // 
-            // balance_end
-            // 
-            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
-            this.balance_end.MinimumWidth = 6;
-            this.balance_end.Name = "balance_end";
-            this.balance_end.Width = 150;
-            // 
-            // cost
-            // 
-            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
-            this.cost.MinimumWidth = 6;
-            this.cost.Name = "cost";
-            this.cost.Width = 150;
+            this.dGV_Calculation.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dGV_Calculation_EditingControlShowing);
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(215, 177);
+            this.dateTimePicker2.Location = new System.Drawing.Point(162, 178);
             this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(187, 22);
+            this.dateTimePicker2.Size = new System.Drawing.Size(215, 22);
             this.dateTimePicker2.TabIndex = 2;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(445, 177);
+            this.dateTimePicker3.Location = new System.Drawing.Point(392, 178);
             this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(185, 22);
+            this.dateTimePicker3.Size = new System.Drawing.Size(213, 22);
             this.dateTimePicker3.TabIndex = 3;
             // 
             // button_cancel
             // 
-            this.button_cancel.Location = new System.Drawing.Point(979, 848);
+            this.button_cancel.Location = new System.Drawing.Point(970, 794);
             this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(100, 28);
@@ -212,7 +177,7 @@ namespace OP_13
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(872, 848);
+            this.button_save.Location = new System.Drawing.Point(863, 794);
             this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(100, 28);
@@ -223,7 +188,7 @@ namespace OP_13
             // 
             // calculate
             // 
-            this.calculate.Location = new System.Drawing.Point(872, 815);
+            this.calculate.Location = new System.Drawing.Point(863, 761);
             this.calculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(208, 26);
@@ -235,7 +200,7 @@ namespace OP_13
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(94, 108);
+            this.label2.Location = new System.Drawing.Point(41, 109);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 17);
@@ -245,7 +210,7 @@ namespace OP_13
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(94, 143);
+            this.label3.Location = new System.Drawing.Point(41, 144);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(113, 17);
@@ -255,7 +220,7 @@ namespace OP_13
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(668, 108);
+            this.label4.Location = new System.Drawing.Point(656, 109);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 17);
@@ -264,16 +229,16 @@ namespace OP_13
             // 
             // textBoxOKPO
             // 
-            this.textBoxOKPO.Location = new System.Drawing.Point(809, 103);
+            this.textBoxOKPO.Location = new System.Drawing.Point(797, 104);
             this.textBoxOKPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxOKPO.Name = "textBoxOKPO";
-            this.textBoxOKPO.Size = new System.Drawing.Size(187, 22);
+            this.textBoxOKPO.Size = new System.Drawing.Size(254, 22);
             this.textBoxOKPO.TabIndex = 101;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(668, 177);
+            this.label5.Location = new System.Drawing.Point(656, 178);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(133, 17);
@@ -282,18 +247,18 @@ namespace OP_13
             // 
             // textBoxOKDP
             // 
-            this.textBoxOKDP.Location = new System.Drawing.Point(809, 174);
+            this.textBoxOKDP.Location = new System.Drawing.Point(797, 175);
             this.textBoxOKDP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxOKDP.Name = "textBoxOKDP";
-            this.textBoxOKDP.Size = new System.Drawing.Size(187, 22);
+            this.textBoxOKDP.Size = new System.Drawing.Size(254, 22);
             this.textBoxOKDP.TabIndex = 71;
             // 
             // textBoxNumberDoc
             // 
-            this.textBoxNumberDoc.Location = new System.Drawing.Point(497, 21);
+            this.textBoxNumberDoc.Location = new System.Drawing.Point(519, 21);
             this.textBoxNumberDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNumberDoc.Name = "textBoxNumberDoc";
-            this.textBoxNumberDoc.Size = new System.Drawing.Size(108, 22);
+            this.textBoxNumberDoc.Size = new System.Drawing.Size(86, 22);
             this.textBoxNumberDoc.TabIndex = 1;
             // 
             // comboBoxOrganization
@@ -303,10 +268,10 @@ namespace OP_13
             "Организация 1",
             "Организация 2",
             "Организация 3"});
-            this.comboBoxOrganization.Location = new System.Drawing.Point(215, 105);
+            this.comboBoxOrganization.Location = new System.Drawing.Point(162, 106);
             this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxOrganization.Name = "comboBoxOrganization";
-            this.comboBoxOrganization.Size = new System.Drawing.Size(415, 24);
+            this.comboBoxOrganization.Size = new System.Drawing.Size(443, 24);
             this.comboBoxOrganization.TabIndex = 1;
             this.comboBoxOrganization.DropDownClosed += new System.EventHandler(this.numb_org);
             // 
@@ -317,10 +282,10 @@ namespace OP_13
             "Подразделение 1",
             "Подразделение 2",
             "Подразделение 3"});
-            this.comboBoxStructSubdivision.Location = new System.Drawing.Point(215, 140);
+            this.comboBoxStructSubdivision.Location = new System.Drawing.Point(162, 141);
             this.comboBoxStructSubdivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.comboBoxStructSubdivision.Name = "comboBoxStructSubdivision";
-            this.comboBoxStructSubdivision.Size = new System.Drawing.Size(415, 24);
+            this.comboBoxStructSubdivision.Size = new System.Drawing.Size(443, 24);
             this.comboBoxStructSubdivision.TabIndex = 6;
             this.comboBoxStructSubdivision.DropDownClosed += new System.EventHandler(this.numb_org1);
             // 
@@ -328,24 +293,24 @@ namespace OP_13
             // 
             this.dGV_Spravka.AllowUserToAddRows = false;
             this.dGV_Spravka.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dGV_Spravka.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dGV_Spravka.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dGV_Spravka.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dGV_Spravka.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.NumberDishes,
             this.Summa});
-            this.dGV_Spravka.Location = new System.Drawing.Point(21, 623);
+            this.dGV_Spravka.Location = new System.Drawing.Point(0, 0);
             this.dGV_Spravka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dGV_Spravka.Name = "dGV_Spravka";
             this.dGV_Spravka.RowHeadersWidth = 51;
-            this.dGV_Spravka.Size = new System.Drawing.Size(1057, 185);
+            this.dGV_Spravka.Size = new System.Drawing.Size(999, 341);
             this.dGV_Spravka.TabIndex = 12;
             this.dGV_Spravka.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ_spravka);
             // 
@@ -377,7 +342,7 @@ namespace OP_13
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.Location = new System.Drawing.Point(160, 506);
+            this.label11.Location = new System.Drawing.Point(165, 610);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(706, 24);
@@ -387,7 +352,7 @@ namespace OP_13
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 544);
+            this.label1.Location = new System.Drawing.Point(28, 648);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 17);
@@ -397,7 +362,7 @@ namespace OP_13
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(349, 544);
+            this.label6.Location = new System.Drawing.Point(354, 648);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(35, 17);
@@ -406,7 +371,7 @@ namespace OP_13
             // 
             // textBoxRubl1
             // 
-            this.textBoxRubl1.Location = new System.Drawing.Point(232, 540);
+            this.textBoxRubl1.Location = new System.Drawing.Point(237, 644);
             this.textBoxRubl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRubl1.Name = "textBoxRubl1";
             this.textBoxRubl1.Size = new System.Drawing.Size(108, 22);
@@ -415,7 +380,7 @@ namespace OP_13
             // 
             // textBoxCopeica1
             // 
-            this.textBoxCopeica1.Location = new System.Drawing.Point(393, 540);
+            this.textBoxCopeica1.Location = new System.Drawing.Point(398, 644);
             this.textBoxCopeica1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCopeica1.Name = "textBoxCopeica1";
             this.textBoxCopeica1.Size = new System.Drawing.Size(108, 22);
@@ -424,7 +389,7 @@ namespace OP_13
             // 
             // textBoxCopeica2
             // 
-            this.textBoxCopeica2.Location = new System.Drawing.Point(393, 580);
+            this.textBoxCopeica2.Location = new System.Drawing.Point(398, 684);
             this.textBoxCopeica2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCopeica2.Name = "textBoxCopeica2";
             this.textBoxCopeica2.Size = new System.Drawing.Size(108, 22);
@@ -433,7 +398,7 @@ namespace OP_13
             // 
             // textBoxRubl2
             // 
-            this.textBoxRubl2.Location = new System.Drawing.Point(232, 580);
+            this.textBoxRubl2.Location = new System.Drawing.Point(237, 684);
             this.textBoxRubl2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxRubl2.Name = "textBoxRubl2";
             this.textBoxRubl2.Size = new System.Drawing.Size(108, 22);
@@ -443,7 +408,7 @@ namespace OP_13
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(511, 583);
+            this.label12.Location = new System.Drawing.Point(516, 687);
             this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(35, 17);
@@ -453,7 +418,7 @@ namespace OP_13
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(349, 583);
+            this.label13.Location = new System.Drawing.Point(354, 687);
             this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(35, 17);
@@ -463,7 +428,7 @@ namespace OP_13
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(23, 583);
+            this.label14.Location = new System.Drawing.Point(28, 687);
             this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(179, 17);
@@ -505,7 +470,7 @@ namespace OP_13
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(511, 544);
+            this.label7.Location = new System.Drawing.Point(516, 648);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(35, 17);
@@ -515,7 +480,7 @@ namespace OP_13
             // linkLabelSignatures
             // 
             this.linkLabelSignatures.AutoSize = true;
-            this.linkLabelSignatures.Location = new System.Drawing.Point(23, 820);
+            this.linkLabelSignatures.Location = new System.Drawing.Point(28, 800);
             this.linkLabelSignatures.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabelSignatures.Name = "linkLabelSignatures";
             this.linkLabelSignatures.Size = new System.Drawing.Size(160, 17);
@@ -526,17 +491,17 @@ namespace OP_13
             // 
             // textBoxTYPEoPERATION
             // 
-            this.textBoxTYPEoPERATION.Location = new System.Drawing.Point(809, 140);
+            this.textBoxTYPEoPERATION.Location = new System.Drawing.Point(797, 141);
             this.textBoxTYPEoPERATION.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTYPEoPERATION.Name = "textBoxTYPEoPERATION";
-            this.textBoxTYPEoPERATION.Size = new System.Drawing.Size(187, 22);
+            this.textBoxTYPEoPERATION.Size = new System.Drawing.Size(254, 22);
             this.textBoxTYPEoPERATION.TabIndex = 103;
             this.textBoxTYPEoPERATION.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(668, 143);
+            this.label15.Location = new System.Drawing.Point(656, 144);
             this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(101, 17);
@@ -544,11 +509,98 @@ namespace OP_13
             this.label15.Text = "Вид операции";
             this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tab1);
+            this.tabControl1.Controls.Add(this.tab2);
+            this.tabControl1.Location = new System.Drawing.Point(44, 241);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1007, 366);
+            this.tabControl1.TabIndex = 104;
+            // 
+            // tab2
+            // 
+            this.tab2.Controls.Add(this.dGV_Spravka);
+            this.tab2.Location = new System.Drawing.Point(4, 25);
+            this.tab2.Name = "tab2";
+            this.tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.tab2.Size = new System.Drawing.Size(999, 337);
+            this.tab2.TabIndex = 0;
+            this.tab2.Text = "Справка";
+            this.tab2.UseVisualStyleBackColor = true;
+            // 
+            // tab1
+            // 
+            this.tab1.Controls.Add(this.dGV_Calculation);
+            this.tab1.Location = new System.Drawing.Point(4, 25);
+            this.tab1.Name = "tab1";
+            this.tab1.Padding = new System.Windows.Forms.Padding(3);
+            this.tab1.Size = new System.Drawing.Size(999, 337);
+            this.tab1.TabIndex = 1;
+            this.tab1.Text = "Расчет";
+            this.tab1.UseVisualStyleBackColor = true;
+            // 
+            // Name_
+            // 
+            this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name_.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Name_.Frozen = true;
+            this.Name_.HeaderText = "Наименование";
+            this.Name_.Items.AddRange(new object[] {
+            "Соль",
+            "Специи",
+            "Горчица"});
+            this.Name_.MinimumWidth = 6;
+            this.Name_.Name = "Name_";
+            this.Name_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Name_.Width = 135;
+            // 
+            // Code
+            // 
+            this.Code.Frozen = true;
+            this.Code.HeaderText = "Код";
+            this.Code.MinimumWidth = 6;
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            this.Code.Width = 40;
+            // 
+            // balance_start
+            // 
+            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
+            this.balance_start.MinimumWidth = 6;
+            this.balance_start.Name = "balance_start";
+            this.balance_start.Width = 150;
+            // 
+            // balance_receipt
+            // 
+            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
+            this.balance_receipt.MinimumWidth = 6;
+            this.balance_receipt.Name = "balance_receipt";
+            this.balance_receipt.Width = 150;
+            // 
+            // balance_end
+            // 
+            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
+            this.balance_end.MinimumWidth = 6;
+            this.balance_end.Name = "balance_end";
+            this.balance_end.Width = 150;
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
+            this.cost.MinimumWidth = 6;
+            this.cost.Name = "cost";
+            this.cost.Width = 150;
+            // 
             // Calculation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 989);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.textBoxTYPEoPERATION);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.linkLabelSignatures);
@@ -566,7 +618,6 @@ namespace OP_13
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dGV_Spravka);
             this.Controls.Add(this.comboBoxStructSubdivision);
             this.Controls.Add(this.comboBoxOrganization);
             this.Controls.Add(this.textBoxNumberDoc);
@@ -581,7 +632,6 @@ namespace OP_13
             this.Controls.Add(this.button_cancel);
             this.Controls.Add(this.dateTimePicker3);
             this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dGV_Calculation);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2_reporting_period);
             this.Controls.Add(this.label1_reporting_period);
@@ -591,6 +641,9 @@ namespace OP_13
             this.Text = "За период";
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tab2.ResumeLayout(false);
+            this.tab1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -630,12 +683,6 @@ namespace OP_13
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn NumberDishes;
         private DataGridViewTextBoxColumn Summa;
-        private DataGridViewTextBoxColumn Name_;
-        private DataGridViewTextBoxColumn Code;
-        private DataGridViewTextBoxColumn balance_start;
-        private DataGridViewTextBoxColumn balance_receipt;
-        private DataGridViewTextBoxColumn balance_end;
-        private DataGridViewTextBoxColumn cost;
         private Label label8;
         private Label label9;
         private Label label10;
@@ -643,6 +690,15 @@ namespace OP_13
         private LinkLabel linkLabelSignatures;
         private TextBox textBoxTYPEoPERATION;
         private Label label15;
+        private TabControl tabControl1;
+        private TabPage tab2;
+        private TabPage tab1;
+        private DataGridViewComboBoxColumn Name_;
+        private DataGridViewTextBoxColumn Code;
+        private DataGridViewTextBoxColumn balance_start;
+        private DataGridViewTextBoxColumn balance_receipt;
+        private DataGridViewTextBoxColumn balance_end;
+        private DataGridViewTextBoxColumn cost;
     }
 }
 
