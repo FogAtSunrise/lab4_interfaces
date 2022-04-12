@@ -32,8 +32,9 @@ namespace OP_13
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1_reporting_period = new System.Windows.Forms.Label();
             this.label2_reporting_period = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -60,30 +61,34 @@ namespace OP_13
             this.textBoxTYPEoPERATION = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tab2 = new System.Windows.Forms.TabPage();
             this.tab1 = new System.Windows.Forms.TabPage();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NumberDishes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Summa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Name_ = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_receipt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.balance_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.result = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tab2 = new System.Windows.Forms.TabPage();
+            this.resultSpravka = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_ = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Code = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_start = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_receipt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.balance_end = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NumberDishes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Summa = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tab2.SuspendLayout();
             this.tab1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.result)).BeginInit();
+            this.tab2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultSpravka)).BeginInit();
             this.SuspendLayout();
             // 
             // label1_reporting_period
@@ -109,13 +114,14 @@ namespace OP_13
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(726, 21);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(187, 22);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // dGV_Calculation
             // 
+            this.dGV_Calculation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dGV_Calculation.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dGV_Calculation.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -136,11 +142,11 @@ namespace OP_13
             this.cost});
             this.dGV_Calculation.GridColor = System.Drawing.SystemColors.Control;
             this.dGV_Calculation.Location = new System.Drawing.Point(-4, 0);
-            this.dGV_Calculation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dGV_Calculation.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Calculation.Name = "dGV_Calculation";
-            this.dGV_Calculation.RowHeadersWidth = 51;
+            this.dGV_Calculation.RowHeadersWidth = 30;
             this.dGV_Calculation.ShowRowErrors = false;
-            this.dGV_Calculation.Size = new System.Drawing.Size(1007, 251);
+            this.dGV_Calculation.Size = new System.Drawing.Size(1007, 211);
             this.dGV_Calculation.TabIndex = 7;
             this.dGV_Calculation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Calculation_CellContentClick);
             this.dGV_Calculation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ);
@@ -149,7 +155,7 @@ namespace OP_13
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(162, 178);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(215, 22);
             this.dateTimePicker2.TabIndex = 2;
@@ -157,7 +163,7 @@ namespace OP_13
             // dateTimePicker3
             // 
             this.dateTimePicker3.Location = new System.Drawing.Point(392, 178);
-            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker3.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(213, 22);
             this.dateTimePicker3.TabIndex = 3;
@@ -165,7 +171,7 @@ namespace OP_13
             // button_cancel
             // 
             this.button_cancel.Location = new System.Drawing.Point(932, 604);
-            this.button_cancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_cancel.Margin = new System.Windows.Forms.Padding(4);
             this.button_cancel.Name = "button_cancel";
             this.button_cancel.Size = new System.Drawing.Size(115, 28);
             this.button_cancel.TabIndex = 15;
@@ -176,7 +182,7 @@ namespace OP_13
             // button_save
             // 
             this.button_save.Location = new System.Drawing.Point(809, 604);
-            this.button_save.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button_save.Margin = new System.Windows.Forms.Padding(4);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(115, 28);
             this.button_save.TabIndex = 14;
@@ -187,7 +193,7 @@ namespace OP_13
             // calculate
             // 
             this.calculate.Location = new System.Drawing.Point(685, 606);
-            this.calculate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.calculate.Margin = new System.Windows.Forms.Padding(4);
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(116, 26);
             this.calculate.TabIndex = 12;
@@ -228,7 +234,7 @@ namespace OP_13
             // textBoxOKPO
             // 
             this.textBoxOKPO.Location = new System.Drawing.Point(797, 104);
-            this.textBoxOKPO.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOKPO.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOKPO.Name = "textBoxOKPO";
             this.textBoxOKPO.Size = new System.Drawing.Size(254, 22);
             this.textBoxOKPO.TabIndex = 101;
@@ -246,7 +252,7 @@ namespace OP_13
             // textBoxOKDP
             // 
             this.textBoxOKDP.Location = new System.Drawing.Point(797, 175);
-            this.textBoxOKDP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxOKDP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxOKDP.Name = "textBoxOKDP";
             this.textBoxOKDP.Size = new System.Drawing.Size(254, 22);
             this.textBoxOKDP.TabIndex = 71;
@@ -254,7 +260,7 @@ namespace OP_13
             // textBoxNumberDoc
             // 
             this.textBoxNumberDoc.Location = new System.Drawing.Point(519, 21);
-            this.textBoxNumberDoc.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNumberDoc.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNumberDoc.Name = "textBoxNumberDoc";
             this.textBoxNumberDoc.Size = new System.Drawing.Size(86, 22);
             this.textBoxNumberDoc.TabIndex = 1;
@@ -269,7 +275,7 @@ namespace OP_13
             "Организация 2",
             "Организация 3"});
             this.comboBoxOrganization.Location = new System.Drawing.Point(162, 106);
-            this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxOrganization.Name = "comboBoxOrganization";
             this.comboBoxOrganization.Size = new System.Drawing.Size(443, 24);
             this.comboBoxOrganization.TabIndex = 1;
@@ -285,7 +291,7 @@ namespace OP_13
             "Подразделение 2",
             "Подразделение 3"});
             this.comboBoxStructSubdivision.Location = new System.Drawing.Point(162, 141);
-            this.comboBoxStructSubdivision.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxStructSubdivision.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxStructSubdivision.Name = "comboBoxStructSubdivision";
             this.comboBoxStructSubdivision.Size = new System.Drawing.Size(443, 24);
             this.comboBoxStructSubdivision.TabIndex = 6;
@@ -293,7 +299,6 @@ namespace OP_13
             // 
             // dGV_Spravka
             // 
-            this.dGV_Spravka.AllowUserToAddRows = false;
             this.dGV_Spravka.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
@@ -309,11 +314,11 @@ namespace OP_13
             this.Column2,
             this.NumberDishes,
             this.Summa});
-            this.dGV_Spravka.Location = new System.Drawing.Point(0, 0);
-            this.dGV_Spravka.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dGV_Spravka.Location = new System.Drawing.Point(0, 7);
+            this.dGV_Spravka.Margin = new System.Windows.Forms.Padding(4);
             this.dGV_Spravka.Name = "dGV_Spravka";
             this.dGV_Spravka.RowHeadersWidth = 51;
-            this.dGV_Spravka.Size = new System.Drawing.Size(999, 341);
+            this.dGV_Spravka.Size = new System.Drawing.Size(999, 224);
             this.dGV_Spravka.TabIndex = 12;
             this.dGV_Spravka.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ_spravka);
             // 
@@ -385,22 +390,11 @@ namespace OP_13
             // 
             this.tabControl1.Controls.Add(this.tab1);
             this.tabControl1.Controls.Add(this.tab2);
-            this.tabControl1.Location = new System.Drawing.Point(44, 224);
+            this.tabControl1.Location = new System.Drawing.Point(44, 225);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1007, 366);
             this.tabControl1.TabIndex = 104;
-            // 
-            // tab2
-            // 
-            this.tab2.Controls.Add(this.dGV_Spravka);
-            this.tab2.Location = new System.Drawing.Point(4, 25);
-            this.tab2.Name = "tab2";
-            this.tab2.Padding = new System.Windows.Forms.Padding(3);
-            this.tab2.Size = new System.Drawing.Size(999, 337);
-            this.tab2.TabIndex = 0;
-            this.tab2.Text = "Справка";
-            this.tab2.UseVisualStyleBackColor = true;
             // 
             // tab1
             // 
@@ -413,92 +407,6 @@ namespace OP_13
             this.tab1.TabIndex = 1;
             this.tab1.Text = "Расчет";
             this.tab1.UseVisualStyleBackColor = true;
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Column1.HeaderText = "Наименование (код)";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 157;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Стоимость на блюдл";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            // 
-            // NumberDishes
-            // 
-            this.NumberDishes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NumberDishes.HeaderText = "Количество блюд";
-            this.NumberDishes.MinimumWidth = 6;
-            this.NumberDishes.Name = "NumberDishes";
-            // 
-            // Summa
-            // 
-            this.Summa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Summa.HeaderText = "Сумма (руб.коп.)";
-            this.Summa.MinimumWidth = 6;
-            this.Summa.Name = "Summa";
-            this.Summa.ReadOnly = true;
-            // 
-            // Name_
-            // 
-            this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Name_.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Name_.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Name_.Frozen = true;
-            this.Name_.HeaderText = "Наименование";
-            this.Name_.Items.AddRange(new object[] {
-            "Горчица",
-            "Соль",
-            "Специи"});
-            this.Name_.MinimumWidth = 6;
-            this.Name_.Name = "Name_";
-            this.Name_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Name_.Sorted = true;
-            this.Name_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Name_.Width = 135;
-            // 
-            // Code
-            // 
-            this.Code.Frozen = true;
-            this.Code.HeaderText = "Код";
-            this.Code.MinimumWidth = 6;
-            this.Code.Name = "Code";
-            this.Code.ReadOnly = true;
-            this.Code.Width = 40;
-            // 
-            // balance_start
-            // 
-            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
-            this.balance_start.MinimumWidth = 6;
-            this.balance_start.Name = "balance_start";
-            this.balance_start.Width = 150;
-            // 
-            // balance_receipt
-            // 
-            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
-            this.balance_receipt.MinimumWidth = 6;
-            this.balance_receipt.Name = "balance_receipt";
-            this.balance_receipt.Width = 150;
-            // 
-            // balance_end
-            // 
-            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
-            this.balance_end.MinimumWidth = 6;
-            this.balance_end.Name = "balance_end";
-            this.balance_end.Width = 150;
-            // 
-            // cost
-            // 
-            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
-            this.cost.MinimumWidth = 6;
-            this.cost.Name = "cost";
-            this.cost.Width = 150;
             // 
             // result
             // 
@@ -521,12 +429,12 @@ namespace OP_13
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.result.GridColor = System.Drawing.SystemColors.Control;
-            this.result.Location = new System.Drawing.Point(0, 249);
+            this.result.Location = new System.Drawing.Point(0, 209);
             this.result.Margin = new System.Windows.Forms.Padding(4);
             this.result.Name = "result";
             this.result.RowHeadersVisible = false;
             this.result.RowHeadersWidth = 51;
-            this.result.Size = new System.Drawing.Size(999, 88);
+            this.result.Size = new System.Drawing.Size(999, 132);
             this.result.TabIndex = 8;
             // 
             // Column3
@@ -534,7 +442,7 @@ namespace OP_13
             this.Column3.HeaderText = "";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.Column3.Width = 180;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -563,6 +471,150 @@ namespace OP_13
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // tab2
+            // 
+            this.tab2.Controls.Add(this.resultSpravka);
+            this.tab2.Controls.Add(this.dGV_Spravka);
+            this.tab2.Location = new System.Drawing.Point(4, 25);
+            this.tab2.Name = "tab2";
+            this.tab2.Padding = new System.Windows.Forms.Padding(3);
+            this.tab2.Size = new System.Drawing.Size(999, 337);
+            this.tab2.TabIndex = 0;
+            this.tab2.Text = "Справка";
+            this.tab2.UseVisualStyleBackColor = true;
+            // 
+            // resultSpravka
+            // 
+            this.resultSpravka.AllowUserToAddRows = false;
+            this.resultSpravka.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultSpravka.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.resultSpravka.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultSpravka.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.resultSpravka.Location = new System.Drawing.Point(0, 224);
+            this.resultSpravka.Margin = new System.Windows.Forms.Padding(4);
+            this.resultSpravka.Name = "resultSpravka";
+            this.resultSpravka.ReadOnly = true;
+            this.resultSpravka.RowHeadersWidth = 51;
+            this.resultSpravka.Size = new System.Drawing.Size(999, 113);
+            this.resultSpravka.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn7.HeaderText = "";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn8.HeaderText = "Сумма (руб.коп.)";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // Name_
+            // 
+            this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name_.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Name_.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.Name_.Frozen = true;
+            this.Name_.HeaderText = "Наименование";
+            this.Name_.Items.AddRange(new object[] {
+            "Горчица",
+            "Соль",
+            "Специи"});
+            this.Name_.MinimumWidth = 6;
+            this.Name_.Name = "Name_";
+            this.Name_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name_.Sorted = true;
+            this.Name_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Name_.Width = 135;
+            // 
+            // Code
+            // 
+            this.Code.Frozen = true;
+            this.Code.HeaderText = "Код";
+            this.Code.MinimumWidth = 6;
+            this.Code.Name = "Code";
+            this.Code.ReadOnly = true;
+            this.Code.Width = 62;
+            // 
+            // balance_start
+            // 
+            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
+            this.balance_start.MinimumWidth = 6;
+            this.balance_start.Name = "balance_start";
+            this.balance_start.Width = 217;
+            // 
+            // balance_receipt
+            // 
+            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
+            this.balance_receipt.MinimumWidth = 6;
+            this.balance_receipt.Name = "balance_receipt";
+            this.balance_receipt.Width = 183;
+            // 
+            // balance_end
+            // 
+            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
+            this.balance_end.MinimumWidth = 6;
+            this.balance_end.Name = "balance_end";
+            this.balance_end.Width = 209;
+            // 
+            // cost
+            // 
+            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
+            this.cost.MinimumWidth = 6;
+            this.cost.Name = "cost";
+            this.cost.Width = 208;
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.HeaderText = "Наименование (код)";
+            this.Column1.Items.AddRange(new object[] {
+            "Горчица",
+            "Соль",
+            "Специи"});
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column1.Sorted = true;
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Column1.Width = 157;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Стоимость на блюдл";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // NumberDishes
+            // 
+            this.NumberDishes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NumberDishes.HeaderText = "Количество блюд";
+            this.NumberDishes.MinimumWidth = 6;
+            this.NumberDishes.Name = "NumberDishes";
+            // 
+            // Summa
+            // 
+            this.Summa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Summa.HeaderText = "Сумма (руб.коп.)";
+            this.Summa.MinimumWidth = 6;
+            this.Summa.Name = "Summa";
+            this.Summa.ReadOnly = true;
             // 
             // Calculation
             // 
@@ -594,15 +646,16 @@ namespace OP_13
             this.Controls.Add(this.label2_reporting_period);
             this.Controls.Add(this.label1_reporting_period);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Calculation";
             this.Text = "ОП-13";
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Calculation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_Spravka)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tab2.ResumeLayout(false);
             this.tab1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.result)).EndInit();
+            this.tab2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resultSpravka)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -638,22 +691,25 @@ namespace OP_13
         private TabControl tabControl1;
         private TabPage tab2;
         private TabPage tab1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn NumberDishes;
-        private DataGridViewTextBoxColumn Summa;
-        private DataGridViewComboBoxColumn Name_;
-        private DataGridViewTextBoxColumn Code;
-        private DataGridViewTextBoxColumn balance_start;
-        private DataGridViewTextBoxColumn balance_receipt;
-        private DataGridViewTextBoxColumn balance_end;
-        private DataGridViewTextBoxColumn cost;
         private DataGridView result;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridView resultSpravka;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewComboBoxColumn Name_;
+        private DataGridViewTextBoxColumn Code;
+        private DataGridViewTextBoxColumn balance_start;
+        private DataGridViewTextBoxColumn balance_receipt;
+        private DataGridViewTextBoxColumn balance_end;
+        private DataGridViewTextBoxColumn cost;
+        private DataGridViewComboBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn NumberDishes;
+        private DataGridViewTextBoxColumn Summa;
     }
 }
 

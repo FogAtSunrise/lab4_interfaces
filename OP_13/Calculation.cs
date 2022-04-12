@@ -23,7 +23,7 @@ namespace OP_13
             // Добавление строк в таблицу
             for (int i = 0; i < 8; ++i)
             {
-                dGV_Calculation.Rows.Add();////////////////////////
+               // dGV_Calculation.Rows.Add();////////////////////////
               /*  DataGridViewComboBoxCell dcombo = new DataGridViewComboBoxCell();
                 dcombo.Items.Add("A");
                 dcombo.Items.Add("B");
@@ -34,7 +34,7 @@ namespace OP_13
             /*  dGV_Calculation.Rows[0].Cells[0].Value = "Соль";
               dGV_Calculation.Rows[1].Cells[0].Value = "Перец";
               dGV_Calculation.Rows[2].Cells[0].Value = "Горчица";*/
-            dGV_Calculation.Rows[7].Cells[1].Value = "Итого";//////////////////////////////
+          //  dGV_Calculation.Rows[7].Cells[1].Value = "Итого";//////////////////////////////
             result.Rows[0].Cells[0].Value = "Итого";///////////////////////////
             // Нумерация строк в таблице
             for (int i = 0; i < dGV_Calculation.RowCount; i++)
@@ -43,12 +43,14 @@ namespace OP_13
             }
 
             // Добавление строк в таблицу
-            for (int i = 0; i < 6; ++i)
+            for (int i = 0; i < 3; ++i)
             {
                 dGV_Spravka.Rows.Add();
             }
+            for (int i = 0; i < 3; i++)
+            { resultSpravka.Rows.Add(); }//############
             // Запрещаем изменять определенные ячейки в основной форме
-            dGV_Calculation.Rows[7].ReadOnly = true;
+          //  dGV_Calculation.Rows[7].ReadOnly = true;
             result.Rows[0].ReadOnly = true;
 
             // Запрещаем изменять определенные ячейки в справке
@@ -56,18 +58,27 @@ namespace OP_13
             {
                 dGV_Spravka.Rows[i].Cells[2].ReadOnly = true;
             }*/
-            //Меняем цвет ячейки
-            dGV_Spravka.Rows[3].Cells[2].Style.BackColor = Color.LightGray;
-            dGV_Spravka.Rows[4].Cells[2].Style.BackColor = Color.LightGray;
-            dGV_Spravka.Rows[5].Cells[2].Style.BackColor = Color.LightGray;
+           
+
+            resultSpravka.Rows[0].Cells[0].Style.BackColor = Color.LightGray;//##############
+            resultSpravka.Rows[1].Cells[0].Style.BackColor = Color.LightGray;
+            resultSpravka.Rows[2].Cells[0].Style.BackColor = Color.LightGray;
 
             // Заполнение полей таблицы "Справка"
             dGV_Spravka.Rows[0].Cells[0].Value = "Соль";
             dGV_Spravka.Rows[1].Cells[0].Value = "Специи";
             dGV_Spravka.Rows[2].Cells[0].Value = "Горчица";
+
+          
+/*
             dGV_Spravka.Rows[3].Cells[2].Value = "Итого";
             dGV_Spravka.Rows[4].Cells[2].Value = "Израсходовано согласно контрольному расчету";
             dGV_Spravka.Rows[5].Cells[2].Value = "Сумма недорасхода";
+*/
+            resultSpravka.Rows[0].Cells[0].Value = "Итого"; //#####################
+            resultSpravka.Rows[1].Cells[0].Value = "Израсходовано согласно контрольному расчету";
+            resultSpravka.Rows[2].Cells[0].Value = "Сумма недорасхода";
+
             // summ();   
         }
 
@@ -115,28 +126,59 @@ namespace OP_13
 
             // Заполняем справку
 
+            raschetForSpravka();
+
+
+            // summ_spravka(sender, e);
+        }
+
+        private void raschetForSpravka()
+        {
+            for (int i = 0; i < dGV_Spravka.Rows.Count-1; i++)
+                for (int j = 1; j < dGV_Spravka.Columns.Count; j++)
+                {
+                    if (Convert.ToString(dGV_Spravka.Rows[i].Cells[j].Value) == "") dGV_Spravka.Rows[i].Cells[j].Value = "0";
+                }
+            
             // Израсходовано согласно контр. расчёта берем из первой таблицы
-            dGV_Spravka.Rows[4].Cells[3].Value = dGV_Calculation.Rows[7].Cells[5].Value;////////6/6/6/6/6
+            //  dGV_Spravka.Rows[4].Cells[3].Value = result.Rows[0].Cells[4].Value;////////6/6/6/6/6
+
+            resultSpravka.Rows[1].Cells[1].Value = result.Rows[0].Cells[4].Value;////////6/6/6/6/6
 
             // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value);
-            dGV_Spravka.Rows[1].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
-            dGV_Spravka.Rows[2].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[2].Cells[1].Value);
+            /*  dGV_Spravka.Rows[0].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value);
+              dGV_Spravka.Rows[1].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
+              dGV_Spravka.Rows[2].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[2].Cells[1].Value);
+            */
+            double summ = 0;
+            for (int i = 0; i < dGV_Spravka.Rows.Count-1; i++)
+            { dGV_Spravka.Rows[i].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[i].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[i].Cells[1].Value);
+                summ += Convert.ToSingle(dGV_Spravka.Rows[i].Cells[3].Value);
+            }
+            /*
             // Итого
             dGV_Spravka.Rows[3].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[3].Value) +
                Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[3].Value);
+               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[3].Value);*/
+
+            resultSpravka.Rows[0].Cells[1].Value = summ;
+
+            for (int i = 0; i < 3; i++)
+                if (Convert.ToString(resultSpravka.Rows[i].Cells[1].Value) == "") resultSpravka.Rows[i].Cells[1].Value = "0";
+
+           // resultSpravka.Rows[2].Cells[1].Value = Convert.ToDouble(resultSpravka.Rows[0].Cells[1])- Convert.ToDouble(resultSpravka.Rows[1].Cells[1]);
+           
+            
             // сумма недорасхода
-            dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -
-              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
+        //    dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
 
             //Кол-во блюд
-            dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
+          /*  dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
                Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) +
                Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value);
+          */
 
         }
-
         private void numb_org(object sender, EventArgs e)
         {
 
@@ -167,27 +209,12 @@ namespace OP_13
         }
 
 
-
+        
         private void summ_spravka(object sender, DataGridViewCellEventArgs e)
         {
-            dGV_Spravka.Rows[4].Cells[3].Value = dGV_Calculation.Rows[7].Cells[5].Value;/////////////////////4/4/4/4
-            // Сумма = количество * на цену
-            dGV_Spravka.Rows[0].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[0].Cells[1].Value);
-            dGV_Spravka.Rows[01].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) * Convert.ToSingle(dGV_Spravka.Rows[1].Cells[1].Value);
-            dGV_Spravka.Rows[2].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value) *     Convert.ToSingle(dGV_Spravka.Rows[2].Cells[1].Value);
 
-          
-            // Итого
-            dGV_Spravka.Rows[3].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[3].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[3].Value);
-            // сумма недорасхода
-            dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -
-              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
-            //Кол-во блюд
-            dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[2].Cells[2].Value);
+            raschetForSpravka();
+
             //
         }
 
@@ -207,6 +234,7 @@ namespace OP_13
                         summa += value;
                     }
                 dGV_Calculation.Rows[j].Cells[i].Value = summa;
+                
             }
 
 
@@ -226,7 +254,8 @@ namespace OP_13
                         float value = Convert.ToSingle(dGV_Calculation.Rows[i].Cells[j].Value);
                         summa += value;
                     }
-                dGV_Calculation.Rows[i].Cells[j].Value = summa;
+               // dGV_Calculation.Rows[i].Cells[j].Value = summa;
+                result.Rows[0].Cells[j-1].Value = summa;
             }
         }
         private void ExportToExcel()
@@ -287,10 +316,10 @@ namespace OP_13
                     excelsheets.Cells[k, "AS"] = dGV_Calculation.Rows[i].Cells[5].Value;
                 }
             }
-            excelsheets.Cells[32, "W"] = dGV_Calculation.Rows[7].Cells[2].Value;
-            excelsheets.Cells[32, "AD"] = dGV_Calculation.Rows[7].Cells[3].Value;
-            excelsheets.Cells[32, "AK"] = dGV_Calculation.Rows[7].Cells[4].Value;
-            excelsheets.Cells[32, "AS"] = dGV_Calculation.Rows[7].Cells[5].Value;
+            excelsheets.Cells[32, "W"] = result.Rows[0].Cells[1].Value;
+            excelsheets.Cells[32, "AD"] = result.Rows[0].Cells[2].Value;
+            excelsheets.Cells[32, "AK"] = result.Rows[0].Cells[3].Value;
+            excelsheets.Cells[32, "AS"] = result.Rows[0].Cells[4].Value;
 
             // заполняем справку из datagridview и textBox
           //  excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
