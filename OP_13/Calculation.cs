@@ -29,10 +29,7 @@ namespace OP_13
             }
 
             // Добавление строк в таблицу
-            for (int i = 0; i < 3; ++i)
-            {
-                dGV_Spravka.Rows.Add();
-            }
+         
             for (int i = 0; i < 3; i++)
             { resultSpravka.Rows.Add(); }//############
             // Запрещаем изменять определенные ячейки в основной форме
@@ -50,17 +47,8 @@ namespace OP_13
             resultSpravka.Rows[1].Cells[0].Style.BackColor = Color.LightGray;
             resultSpravka.Rows[2].Cells[0].Style.BackColor = Color.LightGray;
 
-            // Заполнение полей таблицы "Справка"
-            dGV_Spravka.Rows[0].Cells[0].Value = "Соль";
-            dGV_Spravka.Rows[1].Cells[0].Value = "Специи";
-            dGV_Spravka.Rows[2].Cells[0].Value = "Горчица";
-
           
-/*
-            dGV_Spravka.Rows[3].Cells[2].Value = "Итого";
-            dGV_Spravka.Rows[4].Cells[2].Value = "Израсходовано согласно контрольному расчету";
-            dGV_Spravka.Rows[5].Cells[2].Value = "Сумма недорасхода";
-*/
+          
             resultSpravka.Rows[0].Cells[0].Value = "Итого"; //#####################
             resultSpravka.Rows[1].Cells[0].Value = "Израсходовано согласно контрольному расчету";
             resultSpravka.Rows[2].Cells[0].Value = "Сумма недорасхода";
@@ -300,22 +288,40 @@ namespace OP_13
             excelsheets.Cells[32, "AS"] = result.Rows[0].Cells[4].Value;
 
             // заполняем справку из datagridview и textBox
-          //  excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
-           // excelsheets.Cells[40, "T"] = textBoxCopeica1.Text;
-            excelsheets.Cells[40, "C"] = dGV_Spravka.Rows[0].Cells[1].Value;
+            //  excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
+            // excelsheets.Cells[40, "T"] = textBoxCopeica1.Text;
+
+            string str1 = " Продано блюд, в которые включено ",
+                str2 = ", стоимостью ",
+                str3 = "руб. на блюдо";
+
+            for (int i = 0, k=39; i < dGV_Spravka.Rows.Count - 1; i++, k++)
+                {
+
+                excelsheets.Cells[k, "A"] = str1 + dGV_Spravka.Rows[i].Cells[0].Value
+                                           + str2 + dGV_Spravka.Rows[i].Cells[1].Value + str3;
+
+                excelsheets.Cells[k, "AE"] = dGV_Spravka.Rows[i].Cells[2].Value;
+                excelsheets.Cells[k, "AL"] = dGV_Spravka.Rows[i].Cells[3].Value;
+            }
+           /* excelsheets.Cells[40, "C"] = dGV_Spravka.Rows[0].Cells[1].Value;
             excelsheets.Cells[43, "C"] = dGV_Spravka.Rows[1].Cells[1].Value;
             excelsheets.Cells[46, "C"] = dGV_Spravka.Rows[2].Cells[1].Value;
+
             excelsheets.Cells[39, "T"] = dGV_Spravka.Rows[0].Cells[0].Value;
             excelsheets.Cells[42, "T"] = dGV_Spravka.Rows[1].Cells[0].Value;
             excelsheets.Cells[45, "T"] = dGV_Spravka.Rows[2].Cells[0].Value;
+           
 
             excelsheets.Cells[39, "AE"] = dGV_Spravka.Rows[0].Cells[2].Value;
               excelsheets.Cells[39, "AL"] = dGV_Spravka.Rows[0].Cells[3].Value;
+
               excelsheets.Cells[42, "AE"] = dGV_Spravka.Rows[1].Cells[2].Value;
               excelsheets.Cells[42, "AL"] = dGV_Spravka.Rows[1].Cells[3].Value;
+
             excelsheets.Cells[45, "AE"] = dGV_Spravka.Rows[2].Cells[2].Value;
             excelsheets.Cells[45, "AL"] = dGV_Spravka.Rows[2].Cells[3].Value;
-
+*/
            
               excelsheets.Cells[48, "AL"] = resultSpravka.Rows[0].Cells[1].Value;
               excelsheets.Cells[49, "AL"] = resultSpravka.Rows[1].Cells[1].Value;
