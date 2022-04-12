@@ -121,7 +121,7 @@ namespace OP_13
             // 
             // dGV_Calculation
             // 
-            this.dGV_Calculation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dGV_Calculation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dGV_Calculation.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dGV_Calculation.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -146,7 +146,7 @@ namespace OP_13
             this.dGV_Calculation.Name = "dGV_Calculation";
             this.dGV_Calculation.RowHeadersWidth = 30;
             this.dGV_Calculation.ShowRowErrors = false;
-            this.dGV_Calculation.Size = new System.Drawing.Size(1007, 211);
+            this.dGV_Calculation.Size = new System.Drawing.Size(1003, 258);
             this.dGV_Calculation.TabIndex = 7;
             this.dGV_Calculation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGV_Calculation_CellContentClick);
             this.dGV_Calculation.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.summ);
@@ -273,13 +273,15 @@ namespace OP_13
             this.comboBoxOrganization.Items.AddRange(new object[] {
             "Организация 1",
             "Организация 2",
-            "Организация 3"});
+            "Организация 3",
+            "РосГранТрон"});
             this.comboBoxOrganization.Location = new System.Drawing.Point(162, 106);
             this.comboBoxOrganization.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxOrganization.Name = "comboBoxOrganization";
             this.comboBoxOrganization.Size = new System.Drawing.Size(443, 24);
             this.comboBoxOrganization.TabIndex = 1;
             this.comboBoxOrganization.DropDownClosed += new System.EventHandler(this.numb_org);
+            this.comboBoxOrganization.TextChanged += new System.EventHandler(this.numb_org);
             // 
             // comboBoxStructSubdivision
             // 
@@ -393,7 +395,7 @@ namespace OP_13
             this.tabControl1.Location = new System.Drawing.Point(44, 225);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1007, 366);
+            this.tabControl1.Size = new System.Drawing.Size(1007, 372);
             this.tabControl1.TabIndex = 104;
             // 
             // tab1
@@ -403,7 +405,7 @@ namespace OP_13
             this.tab1.Location = new System.Drawing.Point(4, 25);
             this.tab1.Name = "tab1";
             this.tab1.Padding = new System.Windows.Forms.Padding(3);
-            this.tab1.Size = new System.Drawing.Size(999, 337);
+            this.tab1.Size = new System.Drawing.Size(999, 343);
             this.tab1.TabIndex = 1;
             this.tab1.Text = "Расчет";
             this.tab1.UseVisualStyleBackColor = true;
@@ -411,8 +413,8 @@ namespace OP_13
             // result
             // 
             this.result.AllowUserToAddRows = false;
+            this.result.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.result.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.result.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -429,12 +431,12 @@ namespace OP_13
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.result.GridColor = System.Drawing.SystemColors.Control;
-            this.result.Location = new System.Drawing.Point(0, 209);
+            this.result.Location = new System.Drawing.Point(-4, 252);
             this.result.Margin = new System.Windows.Forms.Padding(4);
             this.result.Name = "result";
             this.result.RowHeadersVisible = false;
             this.result.RowHeadersWidth = 51;
-            this.result.Size = new System.Drawing.Size(999, 132);
+            this.result.Size = new System.Drawing.Size(1007, 91);
             this.result.TabIndex = 8;
             // 
             // Column3
@@ -442,35 +444,30 @@ namespace OP_13
             this.Column3.HeaderText = "";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Остаток на начало отчётного периода (сумма), руб.";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 150;
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Поступило за отчётный период (сумма), руб.";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 150;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Остаток на конец отчётного периода (сумма), руб.";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 150;
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Израсходовано за отчётный период (сумма), руб.";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 150;
             // 
             // tab2
             // 
@@ -479,7 +476,7 @@ namespace OP_13
             this.tab2.Location = new System.Drawing.Point(4, 25);
             this.tab2.Name = "tab2";
             this.tab2.Padding = new System.Windows.Forms.Padding(3);
-            this.tab2.Size = new System.Drawing.Size(999, 337);
+            this.tab2.Size = new System.Drawing.Size(999, 343);
             this.tab2.TabIndex = 0;
             this.tab2.Text = "Справка";
             this.tab2.UseVisualStyleBackColor = true;
@@ -519,18 +516,16 @@ namespace OP_13
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn8.HeaderText = "Сумма (руб.коп.)";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Сумма (руб.)";
             this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // Name_
             // 
-            this.Name_.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.Name_.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Name_.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.Name_.Frozen = true;
+            this.Name_.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Name_.HeaderText = "Наименование";
             this.Name_.Items.AddRange(new object[] {
             "Горчица",
@@ -538,51 +533,45 @@ namespace OP_13
             "Специи"});
             this.Name_.MinimumWidth = 6;
             this.Name_.Name = "Name_";
-            this.Name_.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Name_.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Name_.Sorted = true;
             this.Name_.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Name_.Width = 135;
             // 
             // Code
             // 
-            this.Code.Frozen = true;
             this.Code.HeaderText = "Код";
             this.Code.MinimumWidth = 6;
             this.Code.Name = "Code";
             this.Code.ReadOnly = true;
-            this.Code.Width = 62;
             // 
             // balance_start
             // 
-            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.коп.";
+            this.balance_start.HeaderText = "Остаток на начало отчётного периода (сумма), руб.";
             this.balance_start.MinimumWidth = 6;
             this.balance_start.Name = "balance_start";
-            this.balance_start.Width = 217;
             // 
             // balance_receipt
             // 
-            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.коп.";
+            this.balance_receipt.HeaderText = "Поступило за отчётный период (сумма), руб.";
             this.balance_receipt.MinimumWidth = 6;
             this.balance_receipt.Name = "balance_receipt";
-            this.balance_receipt.Width = 183;
             // 
             // balance_end
             // 
-            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.коп.";
+            this.balance_end.HeaderText = "Остаток на конец отчётного периода (сумма), руб.";
             this.balance_end.MinimumWidth = 6;
             this.balance_end.Name = "balance_end";
-            this.balance_end.Width = 209;
             // 
             // cost
             // 
-            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.коп.";
+            this.cost.HeaderText = "Израсходовано за отчётный период (сумма), руб.";
             this.cost.MinimumWidth = 6;
             this.cost.Name = "cost";
-            this.cost.Width = 208;
             // 
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Column1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.Column1.HeaderText = "Наименование (код)";
             this.Column1.Items.AddRange(new object[] {
             "Горчица",
@@ -597,7 +586,7 @@ namespace OP_13
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Стоимость на блюдл";
+            this.Column2.HeaderText = "Стоимость на блюда";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             // 
@@ -611,7 +600,7 @@ namespace OP_13
             // Summa
             // 
             this.Summa.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Summa.HeaderText = "Сумма (руб.коп.)";
+            this.Summa.HeaderText = "Сумма (руб.)";
             this.Summa.MinimumWidth = 6;
             this.Summa.Name = "Summa";
             this.Summa.ReadOnly = true;
@@ -692,12 +681,12 @@ namespace OP_13
         private TabPage tab2;
         private TabPage tab1;
         private DataGridView result;
+        private DataGridView resultSpravka;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private DataGridView resultSpravka;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private DataGridViewComboBoxColumn Name_;

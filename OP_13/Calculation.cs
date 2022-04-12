@@ -20,21 +20,7 @@ namespace OP_13
         {
             InitializeComponent();
             result.Rows.Add();//////////////////////
-            // Добавление строк в таблицу
-            for (int i = 0; i < 8; ++i)
-            {
-               // dGV_Calculation.Rows.Add();////////////////////////
-              /*  DataGridViewComboBoxCell dcombo = new DataGridViewComboBoxCell();
-                dcombo.Items.Add("A");
-                dcombo.Items.Add("B");
-                dcombo.Items.Add("C");
-                dcombo.AutoCompleteMode = 
-                dGV_Calculation.Rows[i].Cells[0] = dcombo;*/
-            }
-            /*  dGV_Calculation.Rows[0].Cells[0].Value = "Соль";
-              dGV_Calculation.Rows[1].Cells[0].Value = "Перец";
-              dGV_Calculation.Rows[2].Cells[0].Value = "Горчица";*/
-          //  dGV_Calculation.Rows[7].Cells[1].Value = "Итого";//////////////////////////////
+         
             result.Rows[0].Cells[0].Value = "Итого";///////////////////////////
             // Нумерация строк в таблице
             for (int i = 0; i < dGV_Calculation.RowCount; i++)
@@ -52,13 +38,13 @@ namespace OP_13
             // Запрещаем изменять определенные ячейки в основной форме
           //  dGV_Calculation.Rows[7].ReadOnly = true;
             result.Rows[0].ReadOnly = true;
-
+           
             // Запрещаем изменять определенные ячейки в справке
             /*for (int i = 2; i < dGV_Spravka.RowCount; i++)
             {
                 dGV_Spravka.Rows[i].Cells[2].ReadOnly = true;
             }*/
-           
+
 
             resultSpravka.Rows[0].Cells[0].Style.BackColor = Color.LightGray;//##############
             resultSpravka.Rows[1].Cells[0].Style.BackColor = Color.LightGray;
@@ -166,7 +152,7 @@ namespace OP_13
             for (int i = 0; i < 3; i++)
                 if (Convert.ToString(resultSpravka.Rows[i].Cells[1].Value) == "") resultSpravka.Rows[i].Cells[1].Value = "0";
 
-           // resultSpravka.Rows[2].Cells[1].Value = Convert.ToDouble(resultSpravka.Rows[0].Cells[1])- Convert.ToDouble(resultSpravka.Rows[1].Cells[1]);
+            resultSpravka.Rows[2].Cells[1].Value = Convert.ToSingle(resultSpravka.Rows[0].Cells[1].Value) - Convert.ToSingle(resultSpravka.Rows[1].Cells[1].Value);
            
             
             // сумма недорасхода
@@ -182,30 +168,28 @@ namespace OP_13
         private void numb_org(object sender, EventArgs e)
         {
 
-            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex + 1).ToString();
-            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex + 1).ToString() + "." + (comboBoxStructSubdivision.SelectedIndex + 1).ToString();
-            //  textBoxTYPEoPERATION.Text = 
-
-
-            if (textBoxOKDP.Text == "1")
-                textBoxTYPEoPERATION.Text = "304";
-            if (textBoxOKDP.Text == "2")
-                textBoxTYPEoPERATION.Text = "504";
+           // textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex + 1).ToString();
+            //textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex + 1).ToString() + "." + (comboBoxStructSubdivision.SelectedIndex + 1).ToString();
+        
+            string change = (comboBoxOrganization.SelectedIndex + 1).ToString();
+            if (change == "1")
+                textBoxOKPO.Text = "1004323";
+            else if (change == "2")
+                textBoxOKPO.Text = "2094032";
+            else if (change == "3")
+                textBoxOKPO.Text = "3129867";
+            else if (change == "4")
+                textBoxOKPO.Text = "4728586";
+            /*  if (textBoxOKDP.Text == "1")
+                  textBoxTYPEoPERATION.Text = "304";
+              if (textBoxOKDP.Text == "2")
+                  textBoxTYPEoPERATION.Text = "504";
+            */
         }
 
         private void numb_org1(object sender, EventArgs e)
         {
-            textBoxOKDP.Text = (comboBoxOrganization.SelectedIndex + 1).ToString();
-            textBoxOKPO.Text = (comboBoxOrganization.SelectedIndex + 1).ToString() + "." + (comboBoxStructSubdivision.SelectedIndex + 1).ToString();
-            //  textBoxTYPEoPERATION.Text =
-
-
-
-            if (textBoxOKDP.Text == "1")
-                textBoxTYPEoPERATION.Text = "304";
-            if (textBoxOKDP.Text == "2")
-                textBoxTYPEoPERATION.Text = "504";
-
+          
         }
 
 
@@ -289,25 +273,19 @@ namespace OP_13
             excelsheets.Cells[6, "A"] = comboBoxOrganization.Text;
             excelsheets.Cells[8, "A"] = comboBoxStructSubdivision.Text;
 
-            if (comboBoxOrganization.Text == "Организация 1")
-                excelsheets.Cells[6, "AQ"] = 1;
-            if (comboBoxOrganization.Text == "Организация 2")
-                excelsheets.Cells[6, "AQ"] = 2;
-            if (comboBoxOrganization.Text == "Организация 3")
-                excelsheets.Cells[6, "AQ"] = 3;
-            if (comboBoxStructSubdivision.Text == "Подразделение 1")
-                excelsheets.Cells[9, "AQ"] = 1.1;
-            if (comboBoxStructSubdivision.Text == "Подразделение 2")
-                excelsheets.Cells[9, "AQ"] = 2.2;
+     
+                excelsheets.Cells[6, "AQ"] = textBoxOKPO.Text;
 
+                excelsheets.Cells[9, "AQ"] = textBoxOKDP.Text;
            
                 excelsheets.Cells[10, "AQ"] = textBoxTYPEoPERATION.Text;
             
             // заполняем данные из datagridview
-            for (int i = 0, k = 25; i < dGV_Calculation.Rows.Count; i++, k++)
+            for (int i = 0, k = 25; i < dGV_Calculation.Rows.Count-1; i++, k++)
             {
                 if (dGV_Calculation.Rows[i].Cells[0].Value != null)
                 {
+                    excelsheets.Cells[k, "A"] = i+1;
                     excelsheets.Cells[k, "E"] = dGV_Calculation.Rows[i].Cells[0].Value;
                     excelsheets.Cells[k, "S"] = dGV_Calculation.Rows[i].Cells[1].Value;
                     excelsheets.Cells[k, "W"] = dGV_Calculation.Rows[i].Cells[2].Value;
@@ -325,14 +303,11 @@ namespace OP_13
           //  excelsheets.Cells[40, "C"] = textBoxRubl1.Text;
            // excelsheets.Cells[40, "T"] = textBoxCopeica1.Text;
             excelsheets.Cells[40, "C"] = dGV_Spravka.Rows[0].Cells[1].Value;
-            excelsheets.Cells[40, "T"] = dGV_Spravka.Rows[0].Cells[1].Value;
-
             excelsheets.Cells[43, "C"] = dGV_Spravka.Rows[1].Cells[1].Value;
-            excelsheets.Cells[43, "T"] = dGV_Spravka.Rows[1].Cells[1].Value;
-
             excelsheets.Cells[46, "C"] = dGV_Spravka.Rows[2].Cells[1].Value;
-            excelsheets.Cells[46, "T"] = dGV_Spravka.Rows[2].Cells[1].Value;
-
+            excelsheets.Cells[39, "T"] = dGV_Spravka.Rows[0].Cells[0].Value;
+            excelsheets.Cells[42, "T"] = dGV_Spravka.Rows[1].Cells[0].Value;
+            excelsheets.Cells[45, "T"] = dGV_Spravka.Rows[2].Cells[0].Value;
 
             excelsheets.Cells[39, "AE"] = dGV_Spravka.Rows[0].Cells[2].Value;
               excelsheets.Cells[39, "AL"] = dGV_Spravka.Rows[0].Cells[3].Value;
@@ -341,12 +316,10 @@ namespace OP_13
             excelsheets.Cells[45, "AE"] = dGV_Spravka.Rows[2].Cells[2].Value;
             excelsheets.Cells[45, "AL"] = dGV_Spravka.Rows[2].Cells[3].Value;
 
-            excelsheets.Cells[48, "AE"] = dGV_Spravka.Rows[3].Cells[2].Value;
-              excelsheets.Cells[48, "AL"] = dGV_Spravka.Rows[3].Cells[3].Value;
-              excelsheets.Cells[49, "AE"] = dGV_Spravka.Rows[4].Cells[2].Value;
-              excelsheets.Cells[49, "AL"] = dGV_Spravka.Rows[4].Cells[3].Value;
-              excelsheets.Cells[50, "AE"] = dGV_Spravka.Rows[5].Cells[2].Value;
-              excelsheets.Cells[50, "AL"] = dGV_Spravka.Rows[5].Cells[3].Value;
+           
+              excelsheets.Cells[48, "AL"] = resultSpravka.Rows[0].Cells[1].Value;
+              excelsheets.Cells[49, "AL"] = resultSpravka.Rows[1].Cells[1].Value;
+              excelsheets.Cells[50, "AL"] = resultSpravka.Rows[2].Cells[1].Value;
 
              
             string fileName_new = String.Empty;
