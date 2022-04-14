@@ -143,14 +143,6 @@ namespace OP_13
             resultSpravka.Rows[2].Cells[1].Value = Convert.ToSingle(resultSpravka.Rows[0].Cells[1].Value) - Convert.ToSingle(resultSpravka.Rows[1].Cells[1].Value);
            
             
-            // сумма недорасхода
-        //    dGV_Spravka.Rows[5].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[3].Cells[3].Value) -              Convert.ToSingle(dGV_Spravka.Rows[4].Cells[3].Value);
-
-            //Кол-во блюд
-          /*  dGV_Spravka.Rows[4].Cells[3].Value = Convert.ToSingle(dGV_Spravka.Rows[0].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[2].Value) +
-               Convert.ToSingle(dGV_Spravka.Rows[1].Cells[3].Value);
-          */
 
         }
         private void numb_org(object sender, EventArgs e)
